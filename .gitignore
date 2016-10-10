@@ -1,0 +1,5 @@
+sass-cache/
+*.sass-cache
+*.swp
+fire_app_log.txt
+.DS_Store
