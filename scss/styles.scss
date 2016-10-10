@@ -14,16 +14,16 @@ figure {
 }
 body {
     font-family: Arial, Helvetica, Verdana, "微軟正黑體";
-    padding-top: 70px;
+    padding-top: 50px;
     line-height: 30px;
     margin: 0;
-    font-size: 14px;
+    font-size: 16px;
     position: relative;
     background: #FFF;
     text-align: center;
 }
 h1, h2 {
-    margin: 0;
+    // margin: 0;
 }
 a {
     display: block;
@@ -80,30 +80,83 @@ textarea {
     }
 }
 
-.row{
-	width:100%;display:table;
-	table-layout:fixed
+.grid{
+	width: 100%;
+	display: table;
+	table-layout: fixed;
 }
 .col{
-	display:table-cell
+	display:table-cell;
 }
 
+section {
+	// &:nth-child(odd) {
+	// 	background: gray;
+	// }
+	// &:nth-child(even) {
+	// 	background: black;
+	// }
+}
 .block {
     width: 100%;
     margin: 0 auto;
-    padding: 50px 0;
+    padding: 35px 0;
     h2 {
-        font-size: 24px;
+    	font-weight: bold;
+    	font-size: 2.5em;
+    	margin: 20px 0;
     }
     .content {
         width: 90%;
-        margin: 0 auto;
+        margin: 25px auto;
         p {
-        	
+        	text-align: left;
+        	line-height: 1.8em;
+        	margin: 5px 0;
+        	&.q {
+        		font-weight: bold;
+        		color: blue;
+        	}
         }
-        span.highlight {
-        	display: inline-block;
-        	color: red;
+        span {
+        	&.title {
+        		font-size: 1.5em;
+        		font-weight: bold;
+        		margin: 10px 0;
+        	}
+        	&.highlight {
+        		display: inline-block;
+        		color: red;
+        	}
+        }
+        img {
+        	width: 100%;
+        	height: auto;
+        }
+        a.inline {
+        	display: inline;
+        }
+        .post-list {
+        	.post {
+        		width: 31%; 
+        		display: inline-block;
+        		margin-right: 2%;
+        		vertical-align: top;
+        		span {
+        			font-weight: bold;
+        		}
+        		a {
+        			display: inline-block;
+        		}
+        		&:nth-child(3n) {
+        			margin-right: 0px;
+        		}
+        	}
+        	&::after {
+		        content: '';
+		        display: block;
+		        clear: both;
+		    }
         }
     }
 }
