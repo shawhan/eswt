@@ -1,0 +1,8 @@
+.DS_Store
+*.swp
+.sass-cache/
+server.rb
+Gemfile.lock
+fire_app_log.txt
+config.rb
+sass/
