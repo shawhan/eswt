@@ -19,7 +19,7 @@ body {
     margin: 0;
     font-size: 16px;
     position: relative;
-    background: #FFF;
+    background: azure;
     text-align: center;
 }
 h1, h2 {
@@ -96,6 +96,14 @@ section {
 	// &:nth-child(even) {
 	// 	background: black;
 	// }
+}
+span.link-down{
+  text-align:center;
+  font-size: 3em;
+  i{
+    color: #333;
+    cursor:pointer;
+  }
 }
 .block {
     width: 100%;
