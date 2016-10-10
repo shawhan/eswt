@@ -1,0 +1,109 @@
+@import "bootstrap-compass";
+@import "bootstrap-variables";
+@import "bootstrap";
+
+header,
+section,
+footer,
+aside,
+nav,
+main,
+article,
+figure {
+    display: block;
+}
+body {
+    font-family: Arial, Helvetica, Verdana, "微軟正黑體";
+    padding-top: 70px;
+    line-height: 30px;
+    margin: 0;
+    font-size: 14px;
+    position: relative;
+    background: #FFF;
+    text-align: center;
+}
+h1, h2 {
+    margin: 0;
+}
+a {
+    display: block;
+    text-decoration: none;
+}
+span {
+    display: block;
+}
+p {
+    margin: 0;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+        list-style: none;
+    }
+}
+input {
+    padding: 6px 12px;
+}
+img {
+    vertical-align: top;
+}
+::-webkit-input-placeholder {
+    font-weight: normal;
+}
+:-moz-placeholder {
+    /* Firefox 18- */
+    font-weight: normal;
+}
+::-moz-placeholder {
+    /* Firefox 19+ */
+    font-weight: normal;
+}
+:-ms-input-placeholder {
+    font-weight: normal;
+}
+button {
+    padding: 0px;
+    border: none;
+    background: transparent;
+    &:focus {
+        outline: 0;
+    }
+}
+input[type=text],
+input[type=password],
+input[type=submit],
+textarea {
+    &:focus {
+        outline: 0;
+    }
+}
+
+.row{
+	width:100%;display:table;
+	table-layout:fixed
+}
+.col{
+	display:table-cell
+}
+
+.block {
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px 0;
+    h2 {
+        font-size: 24px;
+    }
+    .content {
+        width: 90%;
+        margin: 0 auto;
+        p {
+        	
+        }
+        span.highlight {
+        	display: inline-block;
+        	color: red;
+        }
+    }
+}
