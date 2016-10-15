@@ -1,10 +1,18 @@
 jQuery(function($){
-	$("#photo-carasoul").owlCarousel({
-    slideSpeed : 300,
-    paginationSpeed : 400,
-    singleItem: true,
-    autoPlay: true
-  });
+  var MustacheTemplate = (function() {
+    return function(id, data, partial) {
+      var static_template = $(id).html();
+      if (typeof(data) === "undefined") {
+        return Mustache.render(static_template);
+      } else {
+        if (typeof(partial) === "undefined") {
+          return Mustache.render(static_template, data);
+        } else {
+          return Mustache.render(static_template, data, partial);
+        }
+      }
+    };
+  })();
 
   $(".link-down").click(function(){
     $("html, body").animate({scrollTop: $(window).height()}, 500)
@@ -25,4 +33,57 @@ jQuery(function($){
       iframe: true, //In this example, this flag is mandatory. Izimodal needs to understand you will call an iFrame from here
       iframeURL: "https://www.youtube.com/embed/BmMzt02ainQ?autoPlay=1" //Link will be opened inside modal
   });
+
+  $.getJSON("data.json", function(data) {
+      console.log(data);
+      var banner_html = "";
+      $.each(data.banner, function(k, v){
+        //TODO order by sort ASC
+        banner_html += '<div class="item"><a href="'+v.url+'" target="_blank">';
+        banner_html += '<img src="'+v.photo+'" alt="'+v.title+'"></a></div>';
+      });
+
+      $('#photo-carasoul').append(banner_html).owlCarousel({
+        slideSpeed : 300,
+        paginationSpeed : 400,
+        singleItem: true,
+        autoPlay: true
+      });
+
+      var news_html = "";
+      $.each(data.news, function(k, v){
+        news_html += '<li><a href="'+v.url+'">'+v.title+'</a></li>';
+      });
+      $('.news-list ul').append(news_html);
+
+      var indication_html = "";
+      $.each(data.indication, function(k, v){
+        indication_html += '<div class="post"><img src="'+v.photo+'"><span>'+v.title+'</span></div>';
+      });
+      $('.indication-list').append(indication_html);
+
+      var media_html = "";
+      $.each(data.media, function(k, v){
+        media_html += '<div class="post"><img src="'+v.photo+'"><span>'+v.title+'</span></div>';
+      });
+      $('.media-list').append(media_html);
+
+      var case_html = "";
+      $.each(data.case, function(k, v){
+        case_html += '<div class="post"><img src="'+v.photo+'"><span>'+v.title+'</span></div>';
+      });
+      $('.case-list').append(case_html);
+
+      var info_html = "";
+      $.each(data.info, function(k, v){
+        info_html += '<div class="post"><img src="'+v.photo+'"><span>'+v.title+'</span></div>';
+      });
+      $('.info-list').append(info_html);
+
+      var activity_html = "";
+      $.each(data.activity, function(k, v){
+        activity_html += '<div class="post"><img src="'+v.photo+'"><span>'+v.title+'</span></div>';
+      });
+      $('.activity-list').append(activity_html);
+    });
 });
