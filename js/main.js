@@ -1,19 +1,4 @@
 jQuery(function($){
-  var MustacheTemplate = (function() {
-    return function(id, data, partial) {
-      var static_template = $(id).html();
-      if (typeof(data) === "undefined") {
-        return Mustache.render(static_template);
-      } else {
-        if (typeof(partial) === "undefined") {
-          return Mustache.render(static_template, data);
-        } else {
-          return Mustache.render(static_template, data, partial);
-        }
-      }
-    };
-  })();
-
   $(".link-down").click(function(){
     $("html, body").animate({scrollTop: $(window).height()}, 500)
   });
@@ -64,25 +49,25 @@ jQuery(function($){
 
       var media_html = "";
       $.each(data.media, function(k, v){
-        media_html += '<div class="post"><img src="'+v.photo+'"><span>'+v.title+'</span></div>';
+        media_html += '<div class="post"><a href=""><img src="'+v.photo+'"><span>'+v.title+'</span></a></div>';
       });
       $('.media-list').append(media_html);
 
       var case_html = "";
       $.each(data.case, function(k, v){
-        case_html += '<div class="post"><img src="'+v.photo+'"><span>'+v.title+'</span></div>';
+        case_html += '<div class="post"><a href=""><img src="'+v.photo+'"><span>'+v.title+'</span></a></div>';
       });
       $('.case-list').append(case_html);
 
       var info_html = "";
       $.each(data.info, function(k, v){
-        info_html += '<div class="post"><img src="'+v.photo+'"><span>'+v.title+'</span></div>';
+        info_html += '<div class="post"><a href=""><img src="'+v.photo+'"><span>'+v.title+'</span></a></div>';
       });
       $('.info-list').append(info_html);
 
       var activity_html = "";
       $.each(data.activity, function(k, v){
-        activity_html += '<div class="post"><img src="'+v.photo+'"><span>'+v.title+'</span></div>';
+        activity_html += '<div class="post"><a href=""><img src="'+v.photo+'"><span>'+v.title+'</span></a></div>';
       });
       $('.activity-list').append(activity_html);
     });
