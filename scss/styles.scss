@@ -105,6 +105,13 @@ span.link-down{
     cursor:pointer;
   }
 }
+
+#photo-carasoul {
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
 .block {
     width: 100%;
     margin: 0 auto;
@@ -167,4 +174,39 @@ span.link-down{
 		    }
         }
     }
+}
+
+@media only screen and (max-width: 667px) {
+    .block {
+        padding: 25px 0;
+        h2 {
+            font-size: 2.0em;
+            margin: 15px 0;
+        }
+        .content {
+            margin: 15px auto;
+            p {
+                line-height: 1.8em;
+                margin: 5px 0;
+            }
+            span {
+                &.title {
+                    font-size: 1.2em;
+                    margin: 10px 0;
+                }
+            }
+            .post-list {
+                .post {
+                    width: 48%; 
+                    margin-right: 2%;
+                    &:nth-child(3n) {
+                        margin-right: 2%;
+                    }
+                    &:nth-child(2n) {
+                        margin-right: 0px;
+                    }
+                }
+            }
+        }
+    } 
 }
