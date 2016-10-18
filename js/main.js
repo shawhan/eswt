@@ -11,6 +11,8 @@ jQuery(function($){
         $(".navbar-toggle").click();
 
       }
+      $("#menu li").removeClass('active');
+      $(this).parent().addClass('active');
 
       window.location.hash = this.hash;
       $('html,body').animate({
