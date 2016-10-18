@@ -1,12 +1,24 @@
 jQuery(function($){
   $(".link-down").click(function(){
-    $("html, body").animate({scrollTop: $(window).height()}, 500)
+    $('#menu a[href="#about"').click();
   });
+
+  $('body').on('click', '#menu a', function(e){
+    var target = $(this.hash);
+    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+    if (target.length) {
+      window.location.hash = this.hash;
+      $('html,body').animate({
+          scrollTop: target.offset().top
+      }, 1000);
+      return false;
+    }
+  });
+
   $(document).on("click", ".post a", function(event){
     event.preventDefault();
     $('#modal-iFrame').iziModal('open', this);  
   });
-
   $("#modal-iFrame").iziModal({
       title: 'The Mountain', //Modal title
       subtitle: 'A gorgeous nature time lapse.', //Modal subtitle
@@ -70,5 +82,16 @@ jQuery(function($){
         activity_html += '<div class="post"><a href=""><img src="'+v.photo+'"><span>'+v.title+'</span></a></div>';
       });
       $('.activity-list').append(activity_html);
+
+      if (window.location.hash !== "") {
+        console.log(window.location.hash);
+        var target = $(window.location.hash);
+        target = target.length ? target : $('[name=' + window.location.hash.slice(1) +']');
+        if (target.length) {
+          $('html,body').animate({
+            scrollTop: target.offset().top
+          }, 600);
+        }
+      }
     });
 });
