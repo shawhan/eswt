@@ -7,9 +7,14 @@ jQuery(function($){
     var target = $(this.hash);
     target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
     if (target.length) {
+      if ($(".navbar-toggle").is(":visible") && $("#navbar").hasClass("in") === true) {
+        $(".navbar-toggle").click();
+
+      }
+
       window.location.hash = this.hash;
       $('html,body').animate({
-          scrollTop: target.offset().top
+          scrollTop: target.offset().top - ($('.navbar-header').height()/2)
       }, 1000);
       return false;
     }
@@ -82,16 +87,5 @@ jQuery(function($){
         activity_html += '<div class="post"><a href=""><img src="'+v.photo+'"><span>'+v.title+'</span></a></div>';
       });
       $('.activity-list').append(activity_html);
-
-      if (window.location.hash !== "") {
-        console.log(window.location.hash);
-        var target = $(window.location.hash);
-        target = target.length ? target : $('[name=' + window.location.hash.slice(1) +']');
-        if (target.length) {
-          $('html,body').animate({
-            scrollTop: target.offset().top
-          }, 600);
-        }
-      }
     });
 });
