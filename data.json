@@ -2,12 +2,12 @@
 	"banner" : [
 	{
 		"title" : "10",
-		"photo" : "http://placehold.it/800x550",
+		"photo" : "img/banner-1.jpg",
 		"url" : "http://google.com",
 		"sort" : "10"
 	},{
 		"title" : "5",
-		"photo" : "http://placehold.it/800x550",
+		"photo" : "img/banner-1.jpg",
 		"url" : "http://google.com",
 		"sort" : "5"
 	}],
