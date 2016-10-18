@@ -1,7 +1,22 @@
 jQuery(function($){
-  $(".link-down").click(function(){
-    $('#menu a[href="#about"').click();
-  });
+  $(window).scroll(function() {
+    var windowScroll = $(window).scrollTop();
+    $('.main-cocontainer section').each(function(i) {
+        var id = $(this).attr("id");
+        if (id === "about2" || id === "about3") {
+          id = "about";
+        }
+        if ($(this).position().top <= (windowScroll + $('.navbar-header').height()) ) {
+            $("#menu li.active").removeClass('active');
+            $("#menu a[href='#"+id+"']").parent().addClass('active');
+        }
+    });
+
+    if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
+      $("#menu li.active").removeClass('active');
+      $("#menu a[href='#contact']").parent().addClass('active');
+    }
+  }).scroll();
 
   $('body').on('click', '#menu a', function(e){
     e.preventDefault();
@@ -12,7 +27,7 @@ jQuery(function($){
       $(".navbar-toggle").click();
     }
 
-    $("#menu li").removeClass('active');
+    $("#menu li.active").removeClass('active');
     $(this).parent().addClass('active');
     
     $('html, body').stop().animate({
@@ -20,9 +35,15 @@ jQuery(function($){
     }, 800, function () {
       window.location.hash = hash;
     });
+
+  }).on("click", ".link-down", function(e){
+    e.preventDefault();
+    $('#menu a[href="#about"').click();
+
   }).on("click", ".post a", function(e){
     e.preventDefault();
     $('#modal-iFrame').iziModal('open', this); 
+
   });
 
   $("#modal-iFrame").iziModal({
@@ -38,7 +59,6 @@ jQuery(function($){
   });
 
   $.getJSON("data.json", function(data) {
-      console.log(data);
       var banner_html = "";
       $.each(data.banner, function(k, v){
         //TODO order by sort ASC
