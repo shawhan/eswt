@@ -134,6 +134,9 @@ span.link-down{
         		font-weight: bold;
         		color: blue;
         	}
+            &.center {
+                text-align: center;
+            }
         }
         span {
         	&.title {
@@ -152,6 +155,12 @@ span.link-down{
         }
         a.inline {
         	display: inline;
+        }
+        a.line {
+            background: transparent url(../img/LINE_Icon.png) scroll no-repeat 0px 50%;
+            background-size: 20px 20px;
+            text-indent: 24px;
+            display: inline-block;
         }
         .post-list {
         	.post {

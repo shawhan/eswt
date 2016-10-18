@@ -14,7 +14,11 @@
 	"news" : [
 	{
 		"title" : "最新消息1",
-		"url" : ""
+		"url" : "#contact"
+	},
+	{
+		"title" : "最新消息2",
+		"url" : "#case"
 	}],
 	"indication" : [
 	{
