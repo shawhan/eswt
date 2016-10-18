@@ -4,28 +4,27 @@ jQuery(function($){
   });
 
   $('body').on('click', '#menu a', function(e){
-    var target = $(this.hash);
-    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-    if (target.length) {
-      if ($(".navbar-toggle").is(":visible") && $("#navbar").hasClass("in") === true) {
-        $(".navbar-toggle").click();
+    e.preventDefault();
+    var hash = this.hash;
+    var target = $(hash);
 
-      }
-      $("#menu li").removeClass('active');
-      $(this).parent().addClass('active');
-
-      window.location.hash = this.hash;
-      $('html,body').animate({
-          scrollTop: target.offset().top - ($('.navbar-header').height()/2)
-      }, 1000);
-      return false;
+    if($(".navbar-toggle").is(":visible") && $("#navbar").hasClass("in") === true){
+      $(".navbar-toggle").click();
     }
+
+    $("#menu li").removeClass('active');
+    $(this).parent().addClass('active');
+    
+    $('html, body').stop().animate({
+      'scrollTop': target.offset().top - ($('.navbar-header').height()/2)
+    }, 800, function () {
+      window.location.hash = hash;
+    });
+  }).on("click", ".post a", function(e){
+    e.preventDefault();
+    $('#modal-iFrame').iziModal('open', this); 
   });
 
-  $(document).on("click", ".post a", function(event){
-    event.preventDefault();
-    $('#modal-iFrame').iziModal('open', this);  
-  });
   $("#modal-iFrame").iziModal({
       title: 'The Mountain', //Modal title
       subtitle: 'A gorgeous nature time lapse.', //Modal subtitle
