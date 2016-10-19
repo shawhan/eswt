@@ -19,7 +19,7 @@ body {
     margin: 0;
     font-size: 16px;
     position: relative;
-    background: azure;
+    background: #FFF;
     text-align: center;
 }
 h1, h2 {
@@ -90,14 +90,24 @@ textarea {
 	display:table-cell;
 }
 
-section {
-	// &:nth-child(odd) {
-	// 	background: gray;
-	// }
-	// &:nth-child(even) {
-	// 	background: black;
-	// }
+.navbar {
+    background: #A3C344;
+    border: none;
+    .navbar-nav > li > a {
+        color: #FFF;
+    }
 }
+#about2 {
+    background: #A7C0B1
+}
+#media, #case, #info, #activity {
+    background: #E3E9E5;
+}
+#contact img {
+    width: 100%;
+    height: auto;
+}
+
 span.link-down{
   text-align:center;
   font-size: 3em;
@@ -105,6 +115,12 @@ span.link-down{
     color: #333;
     cursor:pointer;
   }
+}
+
+.main-cocontainer {
+    margin: 0 auto;
+    padding: 0px;
+    width: 100%;
 }
 
 #photo-carasoul {
@@ -115,7 +131,7 @@ span.link-down{
 }
 
 .block {
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
     padding: 35px 0;
     h2 {
@@ -132,7 +148,6 @@ span.link-down{
         	margin: 5px 0;
         	&.q {
         		font-weight: bold;
-        		color: blue;
         	}
             &.center {
                 text-align: center;
