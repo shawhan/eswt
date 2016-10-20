@@ -91,10 +91,20 @@ textarea {
 }
 
 .navbar {
-    background: #A3C344;
+    background: #9fc848;
     border: none;
+    .navbar-brand {
+        color: #FFF;
+        &:hover {
+            color: #FFF;
+        }
+    }
     .navbar-nav > li > a {
         color: #FFF;
+    }
+    .navbar-nav > li.active > a {
+        background: #E3E9E5;
+        color: #838386;
     }
 }
 #about2 {
