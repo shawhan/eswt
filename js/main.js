@@ -57,55 +57,60 @@ jQuery(function($){
     });
   });
   
-  $.getJSON("data.json", function(data) {
-      var banner_html = "";
-      $.each(data.banner, function(k, v){
-        //TODO order by sort ASC
-        banner_html += '<div class="item"><a href="'+v.url+'" target="_blank">';
-        banner_html += '<img src="'+v.photo+'" alt="'+v.title+'"></a></div>';
-      });
-
-      $('#photo-carasoul').append(banner_html).owlCarousel({
-        slideSpeed : 300,
-        paginationSpeed : 400,
-        singleItem: true,
-        autoPlay: true
-      });
-
-      var news_html = "";
-      $.each(data.news, function(k, v){
-        news_html += '<li><a href="'+v.url+'">'+v.title+'</a></li>';
-      });
-      $('.news-list ul').append(news_html);
-
-      var indication_html = "";
-      $.each(data.indication, function(k, v){
-        indication_html += '<div class="post"><img src="'+v.photo+'"><span>'+v.title+'</span></div>';
-      });
-      $('.indication-list').append(indication_html);
-
-      var media_html = "";
-      $.each(data.media, function(k, v){
-        media_html += '<div class="post"><a class="colorbox" href="'+v.photo+'" title="'+v.title+'"><img src="'+v.photo+'"><span>'+v.title+'</span></a></div>';
-      });
-      $('.media-list').append(media_html);
-
-      var case_html = "";
-      $.each(data.case, function(k, v){
-        case_html += '<div class="post"><a class="colorbox" href="'+v.photo+'" title="'+v.title+'"><img src="'+v.photo+'"><span>'+v.title+'</span></a></div>';
-      });
-      $('.case-list').append(case_html);
-
-      var info_html = "";
-      $.each(data.info, function(k, v){
-        info_html += '<div class="post"><a class="colorbox" href="'+v.photo+'" title="'+v.title+'"><img src="'+v.photo+'"><span>'+v.title+'</span></a></div>';
-      });
-      $('.info-list').append(info_html);
-
-      var activity_html = "";
-      $.each(data.activity, function(k, v){
-        activity_html += '<div class="post"><a class="colorbox" href="'+v.photo+'" title="'+v.title+'"><img src="'+v.photo+'"><span>'+v.title+'</span></a></div>';
-      });
-      $('.activity-list').append(activity_html);
+  $.ajax({
+      type: "GET",
+      url: "http://data.shockwave.com.tw/output",
+      dataType: 'json',
+  }).done(function (data) {
+    var banner_html = "";
+    $.each(data.banner, function(k, v){
+      //TODO order by sort ASC
+      banner_html += '<div class="item"><a href="'+v.url+'" target="_blank">';
+      banner_html += '<img src="'+v.photo+'" alt="'+v.title+'"></a></div>';
     });
+
+    $('#photo-carasoul').append(banner_html).owlCarousel({
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem: true,
+      autoPlay: true
+    });
+
+    var news_html = "";
+    $.each(data.news, function(k, v){
+      news_html += '<li><a href="'+v.url+'">'+v.title+'</a></li>';
+    });
+    $('.news-list ul').append(news_html);
+
+    var indication_html = "";
+    $.each(data.indication, function(k, v){
+      indication_html += '<div class="post"><img src="'+v.photo+'"><span>'+v.title+'</span></div>';
+    });
+    $('.indication-list').append(indication_html);
+
+    var media_html = "";
+    $.each(data.media, function(k, v){
+      media_html += '<div class="post"><a class="colorbox" href="'+v.photo+'" title="'+v.title+'"><img src="'+v.photo+'"><span>'+v.title+'</span></a></div>';
+    });
+    $('.media-list').append(media_html);
+
+    var case_html = "";
+    $.each(data.case, function(k, v){
+      case_html += '<div class="post"><a class="colorbox" href="'+v.photo+'" title="'+v.title+'"><img src="'+v.photo+'"><span>'+v.title+'</span></a></div>';
+    });
+    $('.case-list').append(case_html);
+
+    var info_html = "";
+    $.each(data.info, function(k, v){
+      info_html += '<div class="post"><a class="colorbox" href="'+v.photo+'" title="'+v.title+'"><img src="'+v.photo+'"><span>'+v.title+'</span></a></div>';
+    });
+    $('.info-list').append(info_html);
+
+    var activity_html = "";
+    $.each(data.activity, function(k, v){
+      activity_html += '<div class="post"><a class="colorbox" href="'+v.photo+'" title="'+v.title+'"><img src="'+v.photo+'"><span>'+v.title+'</span></a></div>';
+    });
+    $('.activity-list').append(activity_html);
+  });
+
 });
