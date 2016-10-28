@@ -175,8 +175,7 @@ span.link-down{
         	}
         }
         img {
-        	width: 100%;
-        	height: auto;
+        	max-height: 65vh;
         }
         a.inline {
         	display: inline;
@@ -199,6 +198,10 @@ span.link-down{
         		a {
         			display: inline-block;
         		}
+                img {
+                    width: 100%;
+                    height: auto;
+                }
         		&:nth-child(3n) {
         			margin-right: 0px;
         		}
@@ -208,6 +211,10 @@ span.link-down{
 		        display: block;
 		        clear: both;
 		    }
+        }
+        .embed-responsive.embed-responsive-16by9 {
+            max-width: 60vw;
+            margin: 0 auto;
         }
     }
 }
@@ -231,6 +238,10 @@ span.link-down{
                     margin: 10px 0;
                 }
             }
+            img {
+                width: 100%;
+                height: auto;
+            }
             .post-list {
                 .post {
                     width: 48%; 
@@ -242,6 +253,9 @@ span.link-down{
                         margin-right: 0px;
                     }
                 }
+            }
+            .embed-responsive.embed-responsive-16by9 {
+                max-width: 90vw;
             }
         }
     } 
