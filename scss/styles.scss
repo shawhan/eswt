@@ -150,6 +150,11 @@ span.link-down{
     }
 }
 
+.marquee {
+    overflow: hidden;
+    height: 30px;
+}
+
 .block {
     width: 90%;
     margin: 0 auto;

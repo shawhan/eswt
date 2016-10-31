@@ -55,6 +55,17 @@ jQuery(function($){
         $("body").css({"overflow-y":"visible"});
       }
     });
+  }).on("mouseover", ".marquee", function(e){
+    $('.marquee').marquee('pause');
+  }).on("mouseout", ".marquee", function(e){
+    $('.marquee').marquee('resume');
+  });
+
+  $('.marquee').marquee({
+    duration: 3000,
+    delayBeforeStart: 10,
+    direction: 'up',
+    duplicated: true
   });
   
   $.ajax({
