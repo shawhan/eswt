@@ -204,23 +204,76 @@ span.link-down{
         }
         .post-list {
         	.post {
-        		width: 31%; 
-        		display: inline-block;
-        		margin-right: 2%;
-        		vertical-align: top;
+        		display: none;
+                width: 23%; 
+                margin-right: 2%;
+                margin-top: 2%;
+                vertical-align: top;
+                text-align: left;
+                line-height: 1.5em;
+
+                .item {
+                    position: relative;
+                    overflow: hidden;
+                    width: 100%;
+                    .cover {
+                        width: 100%;
+                        height: 100%;
+                        display: block;
+                        position: absolute;
+                        z-index: 9;
+                        background: rgba(0,0,0, 0);
+                        transition: background-color 0.2s ease-out;
+                    }
+                    img {
+                        width: auto;
+                        height: auto;
+                        max-width: 100%;
+                        max-height: 100%;
+                        -webkit-transition: transform 0.4s linear;
+                        -moz-transition: transform 0.4s linear;
+                        -ms-transition: transform 0.4s linear;
+                        transition: transform 0.4s linear;
+                    }
+                }
+
         		span {
         			font-weight: bold;
         		}
         		a {
         			display: inline-block;
+                    &:hover {
+                        .item .cover {
+                            background: rgba(0,0,0, .3);
+                            transition: background-color 0.2s ease-out;
+                        }
+                        .item img {
+                            -webkit-transform: scale(1.1);
+                            -moz-transform: scale(1.1);
+                            -ms-transform: scale(1.1);
+                            transform: scale(1.1);
+
+                            -webkit-filter: saturate(1.1);
+                        }
+                    }
         		}
+                .more-btn{
+                    border: 2px solid #FFF;
+                    border-radius: 0px;
+                    color: #FFF;
+                    font-weight: bold;
+                    margin-top: 2%;
+                }
                 img {
                     width: 100%;
                     height: auto;
                 }
-        		&:nth-child(3n) {
-        			margin-right: 0px;
-        		}
+        		&:nth-child(4n) {
+                    margin-right: 0px;
+                }
+                &.show-post {
+                    display: inline-block;
+                }
         	}
         	&::after {
 		        content: '';
@@ -273,9 +326,6 @@ span.link-down{
                 .post {
                     width: 48%; 
                     margin-right: 2%;
-                    &:nth-child(3n) {
-                        margin-right: 2%;
-                    }
                     &:nth-child(2n) {
                         margin-right: 0px;
                     }
