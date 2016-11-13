@@ -40,9 +40,23 @@ jQuery(function($){
     e.preventDefault();
     $('#menu a[href="#about"').click();
 
+  }).on("click", ".yt-video", function(e){
+    e.preventDefault();
+    $.colorbox({
+        'width' : '70%',
+        'height' : '70%',
+        'href' : 'https://www.youtube.com/embed/'+$(this).attr('data-id')+'?autoplay=1&rel=0',
+        'iframe' : true,
+        'onComplete': function() {
+            $("body").css({"overflow-y":"hidden"});
+            $(".cboxIframe").attr('webkitallowfullscreen', '').attr('mozallowfullscreen', '').attr('allowFullScreen', '');
+        },
+        'onClosed' : function() {
+            $("body").css({"overflow-y":"visible"});
+        }
+    });
   }).on("click", ".post a.colorbox", function(e){
     e.preventDefault();
-
     $.colorbox({
       'maxWidth': '80%',
       'maxHeight': '80%',
