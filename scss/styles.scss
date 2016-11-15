@@ -14,7 +14,7 @@ figure {
 }
 body {
     font-family: Arial, Helvetica, Verdana, "微軟正黑體";
-    padding-top: 50px;
+    padding-top: 82px;
     line-height: 30px;
     margin: 0;
     font-size: 16px;
@@ -48,6 +48,12 @@ input {
 }
 img {
     vertical-align: top;
+    &.bg {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+    }
 }
 
 ::-webkit-input-placeholder {
@@ -101,27 +107,51 @@ textarea {
 }
 
 .navbar {
-    background: #9fc848;
+    background: #9aca3c;
     border: none;
+    height: 82px;
+    margin: 0px;
     .navbar-brand {
-        color: #FFF;
+        height: 100%;
+        display: block;
         &:hover {
             color: #FFF;
         }
     }
+    .navbar-nav {
+        float: none;
+        padding: 35px 0 0 0;
+        width: 565px;
+        margin: 0 auto;
+    }
+    .navbar-nav > li {
+
+    }
     .navbar-nav > li > a {
         color: #FFF;
+        padding: 0 15px 7px 15px;
     }
     .navbar-nav > li.active > a {
-        background: #E3E9E5;
-        color: #838386;
+        color: #FFF;
+        background: transparent;
     }
 }
-#about2 {
-    background: #A7C0B1
+#carasoul {
+    .block {
+        padding: 0px;
+    }
 }
-#media, #case, #info, #activity {
-    background: #E3E9E5;
+#about2 , #media, #info{
+    background: #9aca3c;
+    h2 {
+        color: #FFF;
+    }
+}
+#case, #activity, #location {
+    background: #FFF;
+    h2 {
+        color: #000;
+    }
 }
 #contact img {
     width: 100%;
@@ -152,7 +182,15 @@ span.link-down{
 
 .marquee {
     overflow: hidden;
-    height: 30px;
+    height: 40px;
+    a {
+        color: #1a1a1a;
+        text-decoration: none;
+        font-size: 14px;
+        &:hover {
+            text-decoration: none;
+        }
+    }
 }
 
 .yt-video {
@@ -203,17 +241,17 @@ span.link-down{
 }
 
 .block {
-    width: 90%;
+    width: 100%;
+    padding: 40px 0;
     margin: 0 auto;
-    padding: 35px 0;
     h2 {
     	font-weight: bold;
     	font-size: 2.5em;
-    	margin: 20px 0;
+    	margin: 0px;
     }
     .content {
         width: 90%;
-        margin: 25px auto;
+        margin: 0 auto;
         p {
         	text-align: left;
         	line-height: 1.8em;
@@ -239,17 +277,49 @@ span.link-down{
         img {
             max-width: 100%;
         	max-height: 65vh;
+            &.bg {
+                width: 100%;
+                height: auto;
+                max-width: 100%;
+                max-height: 100%;
+            }
         }
         a.inline {
         	display: inline;
+            color: #000;
+            text-decoration: none;
+            &:hover {
+                text-decoration: none;
+                color: #000;
+            }
         }
         a.line {
-            background: transparent url(../img/LINE_Icon.png) scroll no-repeat 0px 50%;
-            background-size: 20px 20px;
-            text-indent: 24px;
+            background: transparent url(../img/line.png) scroll no-repeat 0px 50%;
+            background-size: 40px;
+            text-indent: 45px;
+            height: 40px;
+            line-height: 40px;
+            display: inline-block;
+        }
+        a.mail {
+            background: transparent url(../img/mail.png) scroll no-repeat 0px 50%;
+            background-size: 40px;
+            text-indent: 45px;
+            height: 40px;
+            line-height: 40px;
             display: inline-block;
         }
         .post-list {
+            padding-top: 30px;
+            &.indication-list .post {
+                width: 30%;
+                &:nth-child(4n) {
+                    margin-right: 2%;
+                }
+                &:nth-child(3n) {
+                    margin-right: 0px;
+                }
+            }
         	.post {
         		display: none;
                 width: 23%; 
@@ -289,7 +359,9 @@ span.link-down{
         		}
         		a {
         			display: inline-block;
+                    color: #000;
                     &:hover {
+                        text-decoration: none;
                         .item .cover {
                             background: rgba(0,0,0, .3);
                             transition: background-color 0.2s ease-out;
@@ -331,6 +403,9 @@ span.link-down{
         .embed-responsive.embed-responsive-16by9 {
             max-width: 60vw;
             margin: 0 auto;
+            &.map {
+                margin-top: 40px;
+            }
         }
     }
 }
@@ -343,6 +418,11 @@ span.link-down{
             &:first-child {
                 margin-bottom: 15px;
             }
+        }
+    }
+    #carasoul {
+        .block {
+            padding: 0px;
         }
     }
 
@@ -370,6 +450,17 @@ span.link-down{
                 height: auto;
             }
             .post-list {
+                padding-top: 20px;
+                &.indication-list .post {
+                    width: 48%; 
+                    margin-right: 2%;
+                    &:nth-child(3n) {
+                        margin-right: 2%;
+                    }
+                    &:nth-child(2n) {
+                        margin-right: 0px;
+                    }
+                }
                 .post {
                     width: 48%; 
                     margin-right: 2%;
