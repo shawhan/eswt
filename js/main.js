@@ -6,7 +6,7 @@ jQuery(function($){
     }
     $(this).attr('src', url);
   });
-  
+
   $(window).scroll(function() {
     var windowScroll = $(window).scrollTop();
     $('.main-cocontainer section').each(function(i) {
@@ -163,7 +163,7 @@ jQuery(function($){
       $('.indication-list .post').addClass('show-post');
     } else {
       $('.indication-list .post:lt(8)').addClass('show-post');
-      $('.indication-list').append('<button class="btn more-btn">Read More</button>');
+      $('.indication-list').append('<button class="btn more-btn white">Read More</button>');
 
       $('.indication-list .more-btn').click(function(e){
         e.stopPropagation();
@@ -209,7 +209,7 @@ jQuery(function($){
       $('.media-list .post').addClass('show-post');
     } else {
       $('.media-list .post:lt(8)').addClass('show-post');
-      $('.media-list').append('<button class="btn more-btn">Read More</button>');
+      $('.media-list').append('<button class="btn more-btn white">Read More</button>');
 
 
       $('.media-list .more-btn').click(function(e){
@@ -244,7 +244,7 @@ jQuery(function($){
       $('.case-list .post').addClass('show-post');
     } else {
       $('.case-list .post:lt(8)').addClass('show-post');
-      $('.case-list').append('<button class="btn more-btn">Read More</button>');
+      $('.case-list').append('<button class="btn more-btn green">Read More</button>');
 
 
       $('.case-list .more-btn').click(function(e){
@@ -259,20 +259,20 @@ jQuery(function($){
       });
     }
 
-    var activity_html = "";
+    var info_html = "";
     $.each(data.activity, function(k, v){
-      activity_html += '<div class="post"><a class="colorbox" href="'+v.photo+'" title="'+v.title+'">';
-      activity_html += '<div class="item"><div class="cover"></div><img src="'+v.photo+'"></div>';
-      activity_html += '<span>'+v.title+'</span></a></div>';
+      info_html += '<div class="post"><a class="colorbox" href="'+v.photo+'" title="'+v.title+'">';
+      info_html += '<div class="item"><div class="cover"></div><img src="'+v.photo+'"></div>';
+      info_html += '<span>'+v.title+'</span></a></div>';
     });
-    $('.info-list').append(activity_html);
+    $('.info-list').append(info_html);
 
     var info_count = $('.info-list .post').length;
     if (info_count <= 8) {
       $('.info-list .post').addClass('show-post');
     } else {
       $('.info-list .post:lt(8)').addClass('show-post');
-      $('.info-list').append('<button class="btn more-btn">Read More</button>');
+      $('.info-list').append('<button class="btn more-btn white">Read More</button>');
 
       $('.info-list .more-btn').click(function(e){
         e.stopPropagation();
@@ -299,7 +299,7 @@ jQuery(function($){
       $('.activity-list .post').addClass('show-post');
     } else {
       $('.activity-list .post:lt(8)').addClass('show-post');
-      $('.activity-list').append('<button class="btn more-btn">Read More</button>');
+      $('.activity-list').append('<button class="btn more-btn green">Read More</button>');
 
       $('.activity-list .more-btn').click(function(e){
         e.stopPropagation();
