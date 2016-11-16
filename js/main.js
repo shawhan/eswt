@@ -1,4 +1,12 @@
 jQuery(function($){
+  $('img.bg').each(function(i) {
+    var url = $(this).attr('src').replace('/mobile/', '/pc/');
+    if (window.matchMedia("screen and (max-width: 667px)").matches) {
+      url = $(this).attr('src').replace('/pc/', '/mobile/');
+    }
+    $(this).attr('src', url);
+  });
+  
   $(window).scroll(function() {
     var windowScroll = $(window).scrollTop();
     $('.main-cocontainer section').each(function(i) {
@@ -24,7 +32,6 @@ jQuery(function($){
       if (window.matchMedia("screen and (max-width: 667px)").matches) {
         url = $(this).attr('src').replace('/pc/', '/mobile/');
       }
-
       $(this).attr('src', url);
     });
   }
