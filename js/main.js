@@ -46,7 +46,17 @@ jQuery(function($){
     }, 800, function () {
       window.location.hash = hash;
     });
-
+  }).on("click", "#photo-carasoul a", function(e){
+    e.preventDefault();
+    var link = $(this).attr('href');
+    var link_array = ["#case","#about","#qa","#media","#activity","#contact","#info","#location"];
+    if (link !== "") {
+      if (link_array.indexOf(link) !== -1) {
+          $('#menu a[href="'+link+'"]').click();
+        } else {
+          window.open(link,'_blank');
+        }
+    }
   }).on("click", ".link-down", function(e){
     e.preventDefault();
     $('#menu a[href="#about"').click();
@@ -79,6 +89,21 @@ jQuery(function($){
       'onClosed' : function() {
         $("body").css({"overflow-y":"visible"});
       }
+    });
+  }).on("click", ".post a.colorbox-youtube", function(e){
+    e.preventDefault();
+    $.colorbox({
+        'width' : '70%',
+        'height' : '70%',
+        'href' : 'https://www.youtube.com/embed/'+$(this).attr('data-id')+'?autoplay=1&rel=0',
+        'iframe' : true,
+        'onComplete': function() {
+            $("body").css({"overflow-y":"hidden"});
+            $(".cboxIframe").attr('webkitallowfullscreen', '').attr('mozallowfullscreen', '').attr('allowFullScreen', '');
+        },
+        'onClosed' : function() {
+            $("body").css({"overflow-y":"visible"});
+        }
     });
   }).on("mouseover", ".marquee", function(e){
     $('.marquee').marquee('pause');
@@ -159,10 +184,9 @@ jQuery(function($){
           media_html += '<a class="colorbox-youtube" data-id="'+v.url+'" title="'+v.title+'">';
         break;
       }
-      media_html += '<div class="item"><div class="cover"></div><img src="img/example.jpg"></div>';
-      // media_html += '<div class="item"><div class="cover"></div><img src="'+v.photo+'"></div>';
-      
+      media_html += '<div class="item"><div class="cover"></div><img src="'+v.cover+'"></div>';
       media_html += '<span>'+v.title+'</span></a>';
+
       if (v.date !== "") {
         media_html += '<span class="date">'+v.date+'</span>';
       }
@@ -204,11 +228,7 @@ jQuery(function($){
       }
 
       case_html += '<div class="item"><div class="cover"></div><img src="'+v.photo+'"></div>';
-      case_html += '<span>'+v.title+'</span></a>';
-      if (v.date !== "") {
-        case_html += '<span class="date">'+v.date+'</span>';
-      }
-      case_html += '</div>';
+      case_html += '<span>'+v.title+'</span></a></div>';
     });
     $('.case-list').append(case_html);
 
