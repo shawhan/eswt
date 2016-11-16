@@ -120,7 +120,6 @@ textarea {
     }
     .navbar-nav {
         float: none;
-        padding: 35px 0 0 0;
         width: 565px;
         margin: 0 auto;
     }
@@ -130,12 +129,23 @@ textarea {
     .navbar-nav > li > a {
         color: #FFF;
         padding: 0 15px 7px 15px;
+        line-height: 1.8;
     }
     .navbar-nav > li.active > a {
         color: #FFF;
         background: transparent;
     }
 }
+.navbar-collapse{
+    background: #9aca3c;
+    border: none;
+    padding: 30px 0 0 0;
+}
+.navbar-toggle {
+    margin-right: 20px;
+    margin-top: 22px;
+}
+
 #carasoul {
     .block {
         padding: 0px;
@@ -143,15 +153,9 @@ textarea {
 }
 #about2 , #media, #info{
     background: #9aca3c;
-    h2 {
-        color: #FFF;
-    }
 }
 #case, #activity, #location {
     background: #FFF;
-    h2 {
-        color: #000;
-    }
 }
 #contact img {
     width: 100%;
@@ -180,6 +184,20 @@ span.link-down{
     }
 }
 
+.owl-theme .owl-controls {
+    position: absolute;
+    bottom: 20px;
+    margin: 0px;
+    left: 43%;
+    .owl-page {
+        &.active span {
+            background: #FFF;
+        }
+        span {
+            background: #000;
+        }
+    }
+}
 .marquee {
     overflow: hidden;
     height: 40px;
@@ -244,10 +262,51 @@ span.link-down{
     width: 100%;
     padding: 40px 0;
     margin: 0 auto;
+    &.no-padding {
+        padding: 0px;
+    }
     h2 {
     	font-weight: bold;
     	font-size: 2.5em;
-    	margin: 0px;
+    	margin: 0 auto;
+        color: transparent;
+        &.indication {
+            background: transparent url(../img/pc/title-indication.png) scroll no-repeat 50% 50%;
+            width: 217px;
+            height: 53px;
+        }
+        &.case {
+            background: transparent url(../img/pc/title-case.png) scroll no-repeat 50% 50%;
+            width: 217px;
+            height: 53px;
+        }
+        &.info {
+            background: transparent url(../img/pc/title-info.png) scroll no-repeat 50% 50%;
+            width: 217px;
+            height: 53px;
+        }
+        &.location {
+            background: transparent url(../img/pc/title-location.png) scroll no-repeat 50% 50%;
+            width: 909px;
+            height: 53px;
+            margin-bottom: 30px;
+        }
+        &.activity {
+            background: transparent url(../img/pc/title-activity.png) scroll no-repeat 50% 50%;
+            width: 215px;
+            height: 53px;
+        }
+        &.media {
+            background: transparent url(../img/pc/title-media.png) scroll no-repeat 50% 50%;
+            width: 217px;
+            height: 53px;
+        }
+        &.contact {
+            margin-bottom: 30px;
+            background: transparent url(../img/pc/title-contact.png) scroll no-repeat 50% 50%;
+            width: 272px;
+            height: 52px;
+        }
     }
     .content {
         width: 90%;
@@ -431,7 +490,42 @@ span.link-down{
         width: 100%;
         h2 {
             font-size: 2.0em;
-            margin: 15px 0;
+            margin: 15px auto;
+            &.indication {
+                background: transparent url(../img/mobile/title-indication.png) scroll no-repeat 50% 50%;
+                width: 359px;
+                height: 39px;
+            }
+            &.case {
+                background: transparent url(../img/mobile/title-case.png) scroll no-repeat 50% 50%;
+                width: 198px;
+                height: 39px;
+            }
+            &.info {
+                background: transparent url(../img/mobile/title-info.png) scroll no-repeat 50% 50%;
+                width: 198px;
+                height: 39px;
+            }
+            &.location {
+                background: transparent url(../img/mobile/title-location.png) scroll no-repeat 50% 50%;
+                width: 419px;
+                height: 80px;
+            }
+            &.activity {
+                background: transparent url(../img/mobile/title-activity.png) scroll no-repeat 50% 50%;
+                width: 198px;
+                height: 39px;
+            }
+            &.media {
+                background: transparent url(../img/mobile/title-media.png) scroll no-repeat 50% 50%;
+                width: 198px;
+                height: 39px;
+            }
+            &.contact {
+                background: transparent url(../img/mobile/title-contact.png) scroll no-repeat 50% 50%;
+                width: 198px;
+                height: 39px;
+            }
         }
         .content {
             margin: 15px auto;
