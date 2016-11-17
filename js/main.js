@@ -154,7 +154,11 @@ jQuery(function($){
     $.each(data.indication, function(k, v){
       indication_html += '<div class="post"><a class="colorbox" href="'+v.photo+'" title="'+v.title+'">';
       indication_html += '<div class="item"><div class="cover"></div><img src="'+v.photo+'"></div>';
-      indication_html += '<span>'+v.title+'</span></a></div>';
+      indication_html += '<span>'+v.title+'</span>';
+      if ("summary" in v && v.summary !== "") {
+        indication_html += '<span class="summary">'+v.summary+'</span>';
+      }
+      indication_html += '</a></div>';
     });
     $('.indication-list').append(indication_html);
 
@@ -192,13 +196,15 @@ jQuery(function($){
         break;
       }
       media_html += '<div class="item"><div class="cover"></div><img src="'+v.cover+'"></div>';
-      media_html += '<span>'+v.title+'</span></a>';
-
-      if (v.date !== "") {
+      if ("media" in v && v.media !== "") {
+        media_html += '<span class="title">'+v.media+'</span>';
+      }
+      if ("date" in v && v.date !== "") {
         media_html += '<span class="date">'+v.date+'</span>';
       }
-      if (v.media !== "") {
-        media_html += '<span>'+v.media+'</span>';
+      media_html += '<span>'+v.title+'</span></a>';
+      if ("summary" in v && v.summary !== "") {
+        media_html += '<span class="summary">'+v.summary+'</span>';
       }
       media_html += '</div>';
     });
@@ -235,7 +241,11 @@ jQuery(function($){
       }
 
       case_html += '<div class="item"><div class="cover"></div><img src="'+v.photo+'"></div>';
-      case_html += '<span>'+v.title+'</span></a></div>';
+      case_html += '<span>'+v.title+'</span>';
+      if ("summary" in v && v.summary !== "") {
+        case_html += '<span class="summary">'+v.summary+'</span>';
+      }
+      case_html += '</a></div>';
     });
     $('.case-list').append(case_html);
 
@@ -263,7 +273,11 @@ jQuery(function($){
     $.each(data.activity, function(k, v){
       info_html += '<div class="post"><a class="colorbox" href="'+v.photo+'" title="'+v.title+'">';
       info_html += '<div class="item"><div class="cover"></div><img src="'+v.photo+'"></div>';
-      info_html += '<span>'+v.title+'</span></a></div>';
+      info_html += '<span>'+v.title+'</span>';
+      if ("summary" in v && v.summary !== "") {
+        info_html += '<span class="summary">'+v.summary+'</span>';
+      }
+      info_html += '</a></div>';
     });
     $('.info-list').append(info_html);
 
@@ -290,7 +304,11 @@ jQuery(function($){
     $.each(data.activity, function(k, v){
       activity_html += '<div class="post"><a class="colorbox" href="'+v.photo+'" title="'+v.title+'">';
       activity_html += '<div class="item"><div class="cover"></div><img src="'+v.photo+'"></div>';
-      activity_html += '<span>'+v.title+'</span></a></div>';
+      activity_html += '<span>'+v.title+'</span>';
+      if ("summary" in v && v.summary !== "") {
+        activity_html += '<span class="summary">'+v.summary+'</span>';
+      }
+      activity_html += '</a></div>';
     });
     $('.activity-list').append(activity_html);
 
