@@ -244,7 +244,7 @@ span.link-down{
             background: #FFF;
         }
         span {
-            background: #000;
+            background: #888;
         }
     }
 }
@@ -554,6 +554,12 @@ span.link-down{
 }
 
 @media only screen and (max-width: 667px) {
+    .navbar {
+        height: auto;
+    }
+    .marquee a {
+        font-size: 24px;
+    }
     .grid{
         display: block;
         .col{
@@ -563,6 +569,15 @@ span.link-down{
             }
         }
     }
+
+    .navbar {
+        .navbar-nav > li {
+            padding: 0 15px 5px 15px;
+            width: 100px;
+            margin: 0 auto;
+        }
+    }
+
     #about2 {
         background: transparent url(../img/mobile/bg-indication.jpg) scroll no-repeat 50% 50%;
         background-size: cover;
@@ -640,6 +655,7 @@ span.link-down{
         }
         .content {
             margin: 15px auto;
+            width: 100%;
             p {
                 line-height: 1.8em;
                 margin: 5px 0;
@@ -657,21 +673,31 @@ span.link-down{
             .post-list {
                 padding-top: 20px;
                 &.indication-list .post {
-                    width: 48%; 
-                    margin-right: 2%;
+                    width: 50%;
                     &:nth-child(3n) {
-                        margin-right: 2%;
+                        margin-right: 0px
                     }
                     &:nth-child(2n) {
                         margin-right: 0px;
                     }
+
+                    a {
+                        position: relative;
+                        vertical-align: top;
+                    }
+                    span {
+                        position: absolute;
+                        bottom: 10px;
+                        font-size: 24px;
+                    }
                 }
                 .post {
-                    width: 48%; 
-                    margin-right: 2%;
+                    width: 50%;
+                    margin: 0px;
                     span {
                         font-size: 24px;
                         line-height: 28px;
+                        padding: 0 10px;
                         &.date {
                             font-size: 22px;
                         }
