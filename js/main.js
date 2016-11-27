@@ -131,13 +131,6 @@ jQuery(function($){
     $('.marquee').marquee('resume');
   });
 
-  $('.marquee').marquee({
-    duration: 3000,
-    delayBeforeStart: 10,
-    direction: 'up',
-    duplicated: true
-  });
-  
   $.ajax({
       type: "GET",
       url: "http://data.shockwave.com.tw/output",
@@ -160,9 +153,12 @@ jQuery(function($){
     var news_html = "";
     data.news.sort(SortByCreate);
     $.each(data.news, function(k, v){
-      news_html += '<li><a href="'+v.url+'">'+v.title+'</a></li>';
+      news_html += '<a href="'+v.url+'">'+v.title+'</a>';
     });
-    $('.news-list ul').append(news_html);
+    $('.marquee').append(news_html).marquee({
+      duration: 4000,
+      duplicated: true
+    });
 
     var indication_html = "";
     data.indication.sort(SortByCreate);
