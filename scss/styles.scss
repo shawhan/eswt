@@ -105,7 +105,7 @@ textarea {
 }
 
 .navbar {
-    background: #9aca3c;
+    background: #A6D5B0;
     border: none;
     height: 82px;
     margin: 0px;
@@ -122,20 +122,30 @@ textarea {
         margin: 0 auto;
     }
     .navbar-nav > li {
-
+        padding: 0 15px;
     }
     .navbar-nav > li > a {
         color: #FFF;
-        padding: 0 15px 7px 15px;
+        padding: 0;
         line-height: 1.8;
+        &:hover {
+            color: #FFF;
+            border-bottom: 2px solid #FFF;
+        }
     }
     .navbar-nav > li.active > a {
         color: #FFF;
+        padding: 0;
+        border-bottom: 2px solid #FFF;
         background: transparent;
+        &:hover {
+            background: transparent;
+            color: #FFF;
+        }
     }
 }
 .navbar-collapse{
-    background: #9aca3c;
+    background: #A6D5B0;
     border: none;
     padding: 30px 0 0 0;
 }
@@ -144,12 +154,32 @@ textarea {
     margin-top: 22px;
 }
 
-#about2 , #media, #info{
-    background: #9aca3c;
+
+#about2 {
+    background: transparent url(../img/pc/bg-indication.jpg) scroll no-repeat 0px 0px;
+    background-size: cover;
 }
-#case, #activity, #location {
-    background: #FFF;
+#media {
+    background: transparent url(../img/pc/bg-media.jpg) scroll no-repeat 0px 0px;
+    background-size: cover;
 }
+#info {
+    background: transparent url(../img/pc/bg-info.jpg) scroll no-repeat 0px 0px;
+    background-size: cover;
+}
+#case {
+    background: transparent url(../img/pc/bg-case.jpg) scroll no-repeat 0px 0px;
+    background-size: cover;
+}
+#activity {
+    background: transparent url(../img/pc/bg-activity.jpg) scroll no-repeat 0px 0px;
+    background-size: cover;
+}
+#location {
+    background: transparent url(../img/pc/bg-location.jpg) scroll no-repeat 0px 0px;
+    background-size: cover;
+}
+
 #about3 {
     .pc-about3 {
         display: block;
@@ -164,10 +194,10 @@ textarea {
         z-index: 10;
         position: absolute;
         &.first {
-            top: 11.5%;
+            top: 11.3%;
         }
         &.second {
-            top: 40%;
+            top: 39.3%;
         }
     }
     img {
@@ -221,12 +251,15 @@ span.link-down{
 .marquee {
     overflow: hidden;
     height: 40px;
+    max-width: 915px;
+    margin: 0 auto;
     a {
-        color: #1a1a1a;
+        color: #63a56f;
         text-decoration: none;
-        font-size: 14px;
+        font-size: 18px;
         &:hover {
             text-decoration: none;
+            color: #1a1a1a;
         }
     }
 }
@@ -292,39 +325,40 @@ span.link-down{
     	margin: 0 auto;
         color: transparent;
         &.indication {
-            background: transparent url(../img/pc/title-indication.png) scroll no-repeat 50% 50%;
+            background: transparent url(../img/pc/title-indication.png?v=1) scroll no-repeat 50% 50%;
             width: 493px;
             height: 53px;
         }
         &.case {
-            background: transparent url(../img/pc/title-case.png) scroll no-repeat 50% 50%;
+            background: transparent url(../img/pc/title-case.png?v=1) scroll no-repeat 50% 50%;
             width: 217px;
             height: 53px;
         }
         &.info {
-            background: transparent url(../img/pc/title-info.png) scroll no-repeat 50% 50%;
+            background: transparent url(../img/pc/title-info.png?v=1) scroll no-repeat 50% 50%;
             width: 217px;
             height: 53px;
         }
         &.location {
-            background: transparent url(../img/pc/title-location.png) scroll no-repeat 50% 50%;
-            width: 909px;
+            background: transparent url(../img/pc/title-location.png?v=1) scroll no-repeat 50% 50%;
+            background-size: contain;
+            width: 80%;
             height: 53px;
             margin-bottom: 30px;
         }
         &.activity {
-            background: transparent url(../img/pc/title-activity.png) scroll no-repeat 50% 50%;
+            background: transparent url(../img/pc/title-activity.png?v=1) scroll no-repeat 50% 50%;
             width: 215px;
             height: 53px;
         }
         &.media {
-            background: transparent url(../img/pc/title-media.png) scroll no-repeat 50% 50%;
+            background: transparent url(../img/pc/title-media.png?v=1) scroll no-repeat 50% 50%;
             width: 217px;
             height: 53px;
         }
         &.contact {
             margin-bottom: 30px;
-            background: transparent url(../img/pc/title-contact.png) scroll no-repeat 50% 50%;
+            background: transparent url(../img/pc/title-contact.png?v=1) scroll no-repeat 50% 50%;
             width: 272px;
             height: 52px;
         }
@@ -442,10 +476,16 @@ span.link-down{
                         font-size: 14px;
                         font-weight: 100;
                     }
+                    &.bdate {
+                        color: #b1b1b1;
+                    }
                     &.title {
                         font-size: 18px;
                         font-weight: bold;
                         margin: 5px 0 0 0;
+                    }
+                    &.subtitle {
+
                     }
                     &.summary {
                         color: #4d4d4d;
@@ -488,11 +528,11 @@ span.link-down{
                 margin-top: 40px;
                 &.white {
                     background: #FFF;
-                    color: #9aca3c;
+                    color: #A6D5B0;
                 }
                 &.green {
                     color: #FFF;
-                    background: #9aca3c;
+                    background: #A6D5B0;
                 }
             }
         	&::after {
@@ -506,6 +546,8 @@ span.link-down{
             margin: 0 auto;
             &.map {
                 margin-top: 40px;
+                width: 960px;
+                height: 510px;
             }
         }
     }
@@ -521,6 +563,31 @@ span.link-down{
             }
         }
     }
+    #about2 {
+        background: transparent url(../img/mobile/bg-indication.jpg) scroll no-repeat 50% 50%;
+        background-size: cover;
+    }
+    #media {
+        background: transparent url(../img/mobile/bg-media.jpg) scroll no-repeat 50% 50%;
+        background-size: cover;
+    }
+    #info {
+        background: transparent url(../img/mobile/bg-info.jpg) scroll no-repeat 50% 50%;
+        background-size: cover;
+    }
+    #case {
+        background: transparent url(../img/mobile/bg-case.jpg) scroll no-repeat 50% 50%;
+        background-size: cover;
+    }
+    #activity {
+        background: transparent url(../img/mobile/bg-activity.jpg) scroll no-repeat 50% 50%;
+        background-size: cover;
+    }
+    #location {
+        background: transparent url(../img/mobile/bg-location.jpg) scroll no-repeat 50% 50%;
+        background-size: cover;
+    }
+
     #about3 {
         .pc-about3 {
             display: none;
@@ -608,6 +675,9 @@ span.link-down{
                         &.date {
                             font-size: 22px;
                         }
+                        &.bdate {
+                            color: #b1b1b1;
+                        }
                         &.title {
                             font-size: 26px;
                             margin: 10px 0 0 0;
@@ -622,5 +692,5 @@ span.link-down{
                 max-width: 90vw;
             }
         }
-    } 
+    }
 }
