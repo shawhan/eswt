@@ -156,7 +156,7 @@ jQuery(function($){
       news_html += '<a href="'+v.url+'">'+v.title+'</a>';
     });
     $('.marquee').append(news_html).marquee({
-      duration: 4000,
+      duration: 8000,
       duplicated: true
     });
 
