@@ -60,7 +60,7 @@ jQuery(function($){
 
     $("#menu li.active").removeClass('active');
     $(this).parent().addClass('active');
-    
+
     $('html, body').stop().animate({
       'scrollTop': target.offset().top - ($('.navbar-header').height()/2)
     }, 800, function () {
@@ -165,6 +165,12 @@ jQuery(function($){
     $.each(data.indication, function(k, v){
       indication_html += '<div class="post"><a class="colorbox" href="'+v.photo+'" title="'+v.title+'">';
       indication_html += '<div class="item"><div class="cover"></div><img src="'+v.photo+'"></div>';
+      if ("media" in v && v.media !== "") {
+        indication_html += '<span class="media">'+v.media+'</span>';
+      }
+      if ("date" in v && v.date !== "") {
+        indication_html += '<span class="date">'+v.date+'</span>';
+      }
       indication_html += '<span class="title">'+v.title+'</span>';
       if ("summary" in v && v.summary !== "") {
         indication_html += '<span class="summary">'+v.summary+'</span>';
@@ -209,12 +215,12 @@ jQuery(function($){
       }
       media_html += '<div class="item"><div class="cover"></div><img src="'+v.cover+'"></div>';
       if ("media" in v && v.media !== "") {
-        media_html += '<span class="title">'+v.media+'</span>';
+        media_html += '<span class="media">'+v.media+'</span>';
       }
       if ("date" in v && v.date !== "") {
-        media_html += '<span class="bdate">'+v.date+'</span>';
+        media_html += '<span class="date">'+v.date+'</span>';
       }
-      media_html += '<span class="subtitle">'+v.title+'</span></a>';
+      media_html += '<span class="title">'+v.title+'</span>';
       if ("summary" in v && v.summary !== "") {
         media_html += '<span class="summary">'+v.summary+'</span>';
       }
@@ -248,12 +254,18 @@ jQuery(function($){
       case_html += '<div class="post">';
 
       if (v.url !== "") {
-        case_html += '<a href="'+v.url+'" target="_blank">';  
+        case_html += '<a href="'+v.url+'" target="_blank">';
       } else {
         case_html += '<a class="colorbox" href="'+v.photo+'" title="'+v.title+'">';
       }
 
       case_html += '<div class="item"><div class="cover"></div><img src="'+v.photo+'"></div>';
+      if ("media" in v && v.media !== "") {
+        case_html += '<span class="media">'+v.media+'</span>';
+      }
+      if ("date" in v && v.date !== "") {
+        case_html += '<span class="date">'+v.date+'</span>';
+      }
       case_html += '<span class="title">'+v.title+'</span>';
       if ("summary" in v && v.summary !== "") {
         case_html += '<span class="summary">'+v.summary+'</span>';
@@ -287,6 +299,12 @@ jQuery(function($){
     $.each(data.activity, function(k, v){
       info_html += '<div class="post"><a class="colorbox" href="'+v.photo+'" title="'+v.title+'">';
       info_html += '<div class="item"><div class="cover"></div><img src="'+v.photo+'"></div>';
+      if ("media" in v && v.media !== "") {
+        info_html += '<span class="media">'+v.media+'</span>';
+      }
+      if ("date" in v && v.date !== "") {
+        info_html += '<span class="date">'+v.date+'</span>';
+      }
       info_html += '<span class="title">'+v.title+'</span>';
       if ("summary" in v && v.summary !== "") {
         info_html += '<span class="summary">'+v.summary+'</span>';
@@ -319,6 +337,12 @@ jQuery(function($){
     $.each(data.activity, function(k, v){
       activity_html += '<div class="post"><a class="colorbox" href="'+v.photo+'" title="'+v.title+'">';
       activity_html += '<div class="item"><div class="cover"></div><img src="'+v.photo+'"></div>';
+      if ("media" in v && v.media !== "") {
+        activity_html += '<span class="media">'+v.media+'</span>';
+      }
+      if ("date" in v && v.date !== "") {
+        activity_html += '<span class="date">'+v.date+'</span>';
+      }
       activity_html += '<span class="title">'+v.title+'</span>';
       if ("summary" in v && v.summary !== "") {
         activity_html += '<span class="summary">'+v.summary+'</span>';

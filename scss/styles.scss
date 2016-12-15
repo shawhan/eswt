@@ -335,20 +335,23 @@ span.link-down{
             background: transparent url(../img/pc/title-indication.png?v=1) scroll no-repeat 50% 50%;
             width: 493px;
             height: 53px;
+            background-size: 400px;
         }
         &.case {
             background: transparent url(../img/pc/title-case.png?v=1) scroll no-repeat 50% 50%;
             width: 217px;
             height: 53px;
+            background-size: 200px;
         }
         &.info {
             background: transparent url(../img/pc/title-info.png?v=1) scroll no-repeat 50% 50%;
             width: 217px;
             height: 53px;
+            background-size: 200px;
         }
         &.location {
             background: transparent url(../img/pc/title-location.png?v=1) scroll no-repeat 50% 50%;
-            background-size: contain;
+            background-size: 750px;
             width: 80%;
             height: 53px;
             margin-bottom: 30px;
@@ -357,17 +360,20 @@ span.link-down{
             background: transparent url(../img/pc/title-activity.png?v=1) scroll no-repeat 50% 50%;
             width: 215px;
             height: 53px;
+            background-size: 200px;
         }
         &.media {
             background: transparent url(../img/pc/title-media.png?v=1) scroll no-repeat 50% 50%;
             width: 217px;
             height: 53px;
+            background-size: 200px;
         }
         &.contact {
             margin-bottom: 30px;
             background: transparent url(../img/pc/title-contact.png?v=1) scroll no-repeat 50% 50%;
             width: 272px;
             height: 52px;
+            background-size: 200px;
         }
     }
     .content {
@@ -441,7 +447,7 @@ span.link-down{
             }
         	.post {
         		display: none;
-                width: 23%; 
+                width: 23%;
                 margin-right: 2%;
                 margin-top: 2%;
                 vertical-align: top;
@@ -487,12 +493,13 @@ span.link-down{
                         color: #b1b1b1;
                     }
                     &.title {
-                        font-size: 18px;
+                        font-size: 19px;
                         font-weight: bold;
+                        color: #895647;
                         margin: 5px 0 0 0;
                     }
-                    &.subtitle {
-
+                    &.media {
+                        margin-top: 5px;
                     }
                     &.summary {
                         color: #4d4d4d;
