@@ -163,16 +163,24 @@ jQuery(function($){
     var indication_html = "";
     data.indication.sort(SortByCreate);
     $.each(data.indication, function(k, v){
+      if (typeof(v.media) === "undefined") {
+        v.media = "";
+      }
+      if (typeof(v.date) === "undefined") {
+        v.date = "";
+      }
+
       indication_html += '<div class="post"><a class="colorbox" href="'+v.photo+'" title="'+v.title+'">';
       indication_html += '<div class="item"><div class="cover"></div><img src="'+v.photo+'"></div>';
-      if ("media" in v && v.media !== "") {
+      if (v.media !== "" ||  v.date !== "") {
         indication_html += '<span class="media">'+v.media+'</span>';
-      }
-      if ("date" in v && v.date !== "") {
         indication_html += '<span class="date">'+v.date+'</span>';
       }
       indication_html += '<span class="title">'+v.title+'</span>';
       if ("summary" in v && v.summary !== "") {
+        if (v.summary.length > 39) {
+          v.summary = v.summary.slice(1, 39) + '⋯⋯';
+        }
         indication_html += '<span class="summary">'+v.summary+'</span>';
       }
       indication_html += '</a></div>';
@@ -201,6 +209,13 @@ jQuery(function($){
     var media_html = "";
     data.media.sort(SortByCreate);
     $.each(data.media, function(k, v){
+      if (typeof(v.media) === "undefined") {
+        v.media = "";
+      }
+      if (typeof(v.date) === "undefined") {
+        v.date = "";
+      }
+
       media_html += '<div class="post">';
       switch(v.type) {
         case '':
@@ -214,14 +229,15 @@ jQuery(function($){
         break;
       }
       media_html += '<div class="item"><div class="cover"></div><img src="'+v.cover+'"></div>';
-      if ("media" in v && v.media !== "") {
+      if (v.media !== "" ||  v.date !== "") {
         media_html += '<span class="media">'+v.media+'</span>';
-      }
-      if ("date" in v && v.date !== "") {
-        media_html += '<span class="date">'+v.date+'</span>';
+        media_html += '<span class="bdate">'+v.date+'</span>';
       }
       media_html += '<span class="title">'+v.title+'</span>';
       if ("summary" in v && v.summary !== "") {
+        if (v.summary.length > 39) {
+          v.summary = v.summary.slice(1, 39) + '⋯⋯';
+        }
         media_html += '<span class="summary">'+v.summary+'</span>';
       }
       media_html += '</div>';
@@ -234,7 +250,6 @@ jQuery(function($){
     } else {
       $('.media-list .post:lt(8)').addClass('show-post');
       $('.media-list').append('<button class="btn more-btn white">Read More</button>');
-
 
       $('.media-list .more-btn').click(function(e){
         e.stopPropagation();
@@ -251,8 +266,14 @@ jQuery(function($){
     var case_html = "";
     data.case.sort(SortByCreate);
     $.each(data.case, function(k, v){
-      case_html += '<div class="post">';
+      if (typeof(v.media) === "undefined") {
+        v.media = "";
+      }
+      if (typeof(v.date) === "undefined") {
+        v.date = "";
+      }
 
+      case_html += '<div class="post">';
       if (v.url !== "") {
         case_html += '<a href="'+v.url+'" target="_blank">';
       } else {
@@ -260,14 +281,15 @@ jQuery(function($){
       }
 
       case_html += '<div class="item"><div class="cover"></div><img src="'+v.photo+'"></div>';
-      if ("media" in v && v.media !== "") {
+      if (v.media !== "" ||  v.date !== "") {
         case_html += '<span class="media">'+v.media+'</span>';
-      }
-      if ("date" in v && v.date !== "") {
         case_html += '<span class="date">'+v.date+'</span>';
       }
       case_html += '<span class="title">'+v.title+'</span>';
       if ("summary" in v && v.summary !== "") {
+        if (v.summary.length > 39) {
+          v.summary = v.summary.slice(1, 39) + '⋯⋯';
+        }
         case_html += '<span class="summary">'+v.summary+'</span>';
       }
       case_html += '</a></div>';
@@ -280,7 +302,6 @@ jQuery(function($){
     } else {
       $('.case-list .post:lt(8)').addClass('show-post');
       $('.case-list').append('<button class="btn more-btn green">Read More</button>');
-
 
       $('.case-list .more-btn').click(function(e){
         e.stopPropagation();
@@ -296,17 +317,25 @@ jQuery(function($){
 
     var info_html = "";
     data.activity.sort(SortByCreate);
-    $.each(data.activity, function(k, v){
+    $.each(data.info, function(k, v){
+      if (typeof(v.media) === "undefined") {
+        v.media = "";
+      }
+      if (typeof(v.date) === "undefined") {
+        v.date = "";
+      }
+
       info_html += '<div class="post"><a class="colorbox" href="'+v.photo+'" title="'+v.title+'">';
       info_html += '<div class="item"><div class="cover"></div><img src="'+v.photo+'"></div>';
-      if ("media" in v && v.media !== "") {
+      if (v.media !== "" ||  v.date !== "") {
         info_html += '<span class="media">'+v.media+'</span>';
-      }
-      if ("date" in v && v.date !== "") {
-        info_html += '<span class="date">'+v.date+'</span>';
+        info_html += '<span class="bdate">'+v.date+'</span>';
       }
       info_html += '<span class="title">'+v.title+'</span>';
       if ("summary" in v && v.summary !== "") {
+        if (v.summary.length > 39) {
+          v.summary = v.summary.slice(1, 39) + '⋯⋯';
+        }
         info_html += '<span class="summary">'+v.summary+'</span>';
       }
       info_html += '</a></div>';
@@ -335,16 +364,24 @@ jQuery(function($){
     var activity_html = "";
     data.activity.sort(SortByCreate);
     $.each(data.activity, function(k, v){
+      if (typeof(v.media) === "undefined") {
+        v.media = "";
+      }
+      if (typeof(v.date) === "undefined") {
+        v.date = "";
+      }
+
       activity_html += '<div class="post"><a class="colorbox" href="'+v.photo+'" title="'+v.title+'">';
       activity_html += '<div class="item"><div class="cover"></div><img src="'+v.photo+'"></div>';
-      if ("media" in v && v.media !== "") {
+      if (v.media !== "" ||  v.date !== "") {
         activity_html += '<span class="media">'+v.media+'</span>';
-      }
-      if ("date" in v && v.date !== "") {
         activity_html += '<span class="date">'+v.date+'</span>';
       }
       activity_html += '<span class="title">'+v.title+'</span>';
       if ("summary" in v && v.summary !== "") {
+        if (v.summary.length > 39) {
+          v.summary = v.summary.slice(1, 39) + '⋯⋯';
+        }
         activity_html += '<span class="summary">'+v.summary+'</span>';
       }
       activity_html += '</a></div>';
