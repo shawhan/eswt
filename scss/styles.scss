@@ -197,7 +197,7 @@ textarea {
             top: 11.3%;
         }
         &.second {
-            top: 39.3%;
+            top: 39.5%;
         }
     }
     img {
@@ -236,7 +236,7 @@ span.link-down{
 
 .owl-theme .owl-controls {
     position: absolute;
-    bottom: 20px;
+    bottom: 0px;
     margin: 0 auto;
     width: 100%;
     .owl-page {
@@ -248,16 +248,16 @@ span.link-down{
         }
     }
 }
+
 .marquee {
   max-width: 915px;
   overflow: hidden;
-  margin: 5px auto;
   a {
     display: inline-block;
     color: #63a56f;
     text-decoration: none;
     font-size: 18px;
-    margin-right: 30px;
+    margin-right: 60px;
     &:hover {
         text-decoration: none;
         color: #1a1a1a;
@@ -266,9 +266,11 @@ span.link-down{
 }
 .pc-marquee {
     display: block;
+    margin: 25px auto;
 }
 .mobile-marquee {
     display: none;
+    margin: 10px auto;
 }
 
 .yt-video {
@@ -335,45 +337,45 @@ span.link-down{
             background: transparent url(../img/pc/title-indication.png?v=1) scroll no-repeat 50% 50%;
             width: 493px;
             height: 53px;
-            background-size: 400px;
+            background-size: auto 40px;
         }
         &.case {
             background: transparent url(../img/pc/title-case.png?v=1) scroll no-repeat 50% 50%;
             width: 217px;
             height: 53px;
-            background-size: 200px;
+            background-size: auto 40px;
         }
         &.info {
             background: transparent url(../img/pc/title-info.png?v=1) scroll no-repeat 50% 50%;
             width: 217px;
             height: 53px;
-            background-size: 200px;
+            background-size: auto 40px;
         }
         &.location {
             background: transparent url(../img/pc/title-location.png?v=1) scroll no-repeat 50% 50%;
-            background-size: 750px;
+            background-size: contain;
             width: 80%;
-            height: 53px;
+            height: 45px;
             margin-bottom: 30px;
         }
         &.activity {
             background: transparent url(../img/pc/title-activity.png?v=1) scroll no-repeat 50% 50%;
             width: 215px;
             height: 53px;
-            background-size: 200px;
+            background-size: auto 40px;
         }
         &.media {
             background: transparent url(../img/pc/title-media.png?v=1) scroll no-repeat 50% 50%;
             width: 217px;
             height: 53px;
-            background-size: 200px;
+            background-size: auto 40px;
         }
         &.contact {
             margin-bottom: 30px;
             background: transparent url(../img/pc/title-contact.png?v=1) scroll no-repeat 50% 50%;
             width: 272px;
             height: 52px;
-            background-size: 200px;
+            background-size: auto 40px;
         }
     }
     .content {
@@ -389,6 +391,11 @@ span.link-down{
             &.center {
                 text-align: center;
             }
+        }
+        .contact-info {
+            width: 80%;
+            margin: 0 auto;
+            text-align: left;
         }
         span {
         	&.title {
@@ -419,32 +426,23 @@ span.link-down{
             }
         }
         a.line {
-            background: transparent url(../img/line.png) scroll no-repeat 0px 50%;
+            background: transparent url(../img/line.png?v=1) scroll no-repeat 0px 50%;
             background-size: 40px;
-            text-indent: 45px;
+            text-indent: 55px;
             height: 40px;
             line-height: 40px;
-            display: inline-block;
+            display: block;
         }
         a.mail {
             background: transparent url(../img/mail.png) scroll no-repeat 0px 50%;
             background-size: 40px;
-            text-indent: 45px;
+            text-indent: 55px;
             height: 40px;
             line-height: 40px;
-            display: inline-block;
+            display: block;
         }
         .post-list {
             padding-top: 30px;
-            &.indication-list .post {
-                width: 30%;
-                &:nth-child(4n) {
-                    margin-right: 2%;
-                }
-                &:nth-child(3n) {
-                    margin-right: 0px;
-                }
-            }
         	.post {
         		display: none;
                 width: 23%;
@@ -452,12 +450,12 @@ span.link-down{
                 margin-top: 2%;
                 vertical-align: top;
                 text-align: left;
-                line-height: 1.5em;
 
                 .item {
                     position: relative;
                     overflow: hidden;
                     width: 100%;
+                    padding-bottom: 5px;
                     .cover {
                         width: 100%;
                         height: 100%;
@@ -479,32 +477,49 @@ span.link-down{
                     }
                 }
 
-        		span {
-        			font-weight: bold;
-                    color: #1a1a1a;
+                span {
+                    color: #4d4d4d;
                     font-size: 16px;
-                    line-height: 18px;
+                    line-height: 20px;
                     &.date {
                         color: #FFF;
-                        font-size: 14px;
-                        font-weight: 100;
+                        font-size: 13px;
+                        display: inline-block;
+                        width: 40%;
+                        text-align: right;
+                        padding: 0 10px 0 0;
+                        vertical-align: middle;
                     }
                     &.bdate {
                         color: #b1b1b1;
+                        font-size: 13px;
+                        display: inline-block;
+                        width: 40%;
+                        text-align: right;
+                        padding: 0 10px 0 0;
+                        vertical-align: middle;
                     }
                     &.title {
-                        font-size: 19px;
+                        font-size: 20px;
                         font-weight: bold;
-                        color: #895647;
-                        margin: 5px 0 0 0;
+                        color: #1a1a1a;
+                        margin: 0px;
+                        padding: 0 10px;
                     }
                     &.media {
-                        margin-top: 5px;
+                        font-size: 14px;
+                        font-weight: bold;
+                        color: #1a1a1a;
+                        width: 60%;
+                        display: inline-block;
+                        padding: 0 0 0 10px;
+                        margin: 0px;
+                        vertical-align: middle;
                     }
                     &.summary {
                         color: #4d4d4d;
                     }
-        		}
+                }
         		a {
         			display: inline-block;
                     color: #000;
@@ -543,10 +558,18 @@ span.link-down{
                 &.white {
                     background: #FFF;
                     color: #A6D5B0;
+                    &:hover {
+                        color: #FFF;
+                        background: #1a1a1a;
+                    }
                 }
                 &.green {
                     color: #FFF;
                     background: #A6D5B0;
+                    &:hover {
+                        color: #FFF;
+                        background: #1a1a1a;
+                    }
                 }
             }
         	&::after {
@@ -555,13 +578,11 @@ span.link-down{
 		        clear: both;
 		    }
         }
-        .embed-responsive.embed-responsive-16by9 {
-            max-width: 60vw;
+        .embed-responsive.embed-responsive-4by3 {
             margin: 0 auto;
             &.map {
-                margin-top: 40px;
-                width: 960px;
-                height: 510px;
+                max-width: 960px;
+                max-height: 510px;
             }
         }
     }
@@ -574,8 +595,34 @@ span.link-down{
     .navbar {
         height: auto;
     }
+    .navbar-default {
+        padding: 5px 0 0 0;
+    }
+    .navbar-header {
+       .navbar-toggle {
+            margin-right: 38px;
+            border: none;
+            &:hover {
+                background: transparent;
+            }
+            .icon-bar {
+                background-color: #FFF;
+            }
+        }
+    }
+    .navbar {
+        .navbar-nav {
+            width: 100%;
+            li {
+                width: 100%;
+                padding: 5px 0;
+                text-align: center;
+                margin: 0 auto;
+            }
+        }
+    }
     .marquee a {
-        font-size: 24px;
+        font-size: 12px;
     }
     .pc-marquee {
         display: none;
@@ -583,6 +630,14 @@ span.link-down{
     .mobile-marquee {
         display: block;
     }
+    span.link-down {
+        padding-top: 10px;
+        font-size: 1.5em;
+        i {
+            color: #333;
+        }
+    }
+
     .grid{
         display: block;
         .col{
@@ -590,14 +645,6 @@ span.link-down{
             &:first-child {
                 margin-bottom: 15px;
             }
-        }
-    }
-
-    .navbar {
-        .navbar-nav > li {
-            padding: 0 15px 5px 15px;
-            width: 100px;
-            margin: 0 auto;
         }
     }
 
@@ -641,46 +688,46 @@ span.link-down{
             font-size: 2.0em;
             margin: 15px auto;
             &.indication {
-                background: transparent url(../img/mobile/title-indication.png?v=2) scroll no-repeat 50% 50%;
-                width: 359px;
-                height: 39px;
-                background-size: 320px;
+                background: transparent url(../img/mobile/title-indication.png?v=3) scroll no-repeat 50% 50%;
+                width: 100%;
+                height: 20px;
+                background-size: contain;
             }
             &.case {
-                background: transparent url(../img/mobile/title-case.png?v=2) scroll no-repeat 50% 50%;
-                width: 198px;
-                height: 39px;
-                background-size: 180px;
+                background: transparent url(../img/mobile/title-case.png?v=3) scroll no-repeat 50% 50%;
+                width: 100%;
+                height: 20px;
+                background-size: contain;
             }
             &.info {
-                background: transparent url(../img/mobile/title-info.png?v=2) scroll no-repeat 50% 50%;
-                width: 198px;
-                height: 39px;
-                background-size: 180px;
+                background: transparent url(../img/mobile/title-info.png?v=3) scroll no-repeat 50% 50%;
+                width: 100%;
+                height: 20px;
+                background-size: contain;
             }
             &.location {
-                background: transparent url(../img/mobile/title-location.png?v=2) scroll no-repeat 50% 50%;
-                width: 419px;
-                height: 80px;
-                background-size: 400px;
+                background: transparent url(../img/mobile/title-location.png?v=3) scroll no-repeat 50% 50%;
+                width: 100%;
+                height: 40px;
+                background-size: contain;
             }
             &.activity {
-                background: transparent url(../img/mobile/title-activity.png?v=2) scroll no-repeat 50% 50%;
-                width: 198px;
-                height: 39px;
-                background-size: 180px;
+                background: transparent url(../img/mobile/title-activity.png?v=3) scroll no-repeat 50% 50%;
+                width: 100%;
+                height: 20px;
+                background-size: contain;
             }
             &.media {
-                background: transparent url(../img/mobile/title-media.png?v=2) scroll no-repeat 50% 50%;
-                width: 198px;
-                height: 39px;
-                background-size: 180px;
+                background: transparent url(../img/mobile/title-media.png?v=3) scroll no-repeat 50% 50%;
+                width: 100%;
+                height: 20px;
+                background-size: contain;
             }
             &.contact {
-                background: transparent url(../img/mobile/title-contact.png?v=2) scroll no-repeat 50% 50%;
-                width: 198px;
-                height: 39px;
-                background-size: 200px;
+                background: transparent url(../img/mobile/title-contact.png?v=3) scroll no-repeat 50% 50%;
+                width: 100%;
+                height: 20px;
+                background-size: contain;
             }
         }
         .content {
@@ -703,14 +750,6 @@ span.link-down{
             .post-list {
                 padding-top: 20px;
                 &.indication-list .post {
-                    width: 50%;
-                    &:nth-child(3n) {
-                        margin-right: 0px
-                    }
-                    &:nth-child(2n) {
-                        margin-right: 0px;
-                    }
-
                     a {
                         position: relative;
                         vertical-align: top;
@@ -718,25 +757,30 @@ span.link-down{
                     span {
                         position: absolute;
                         bottom: 10px;
-                        font-size: 24px;
+                        font-size: 12px;
                     }
                 }
                 .post {
                     width: 50%;
                     margin: 0px;
                     span {
-                        font-size: 24px;
-                        line-height: 28px;
+                        font-size: 12px;
+                        line-height: 14px;
                         padding: 0 10px;
                         &.date {
-                            font-size: 22px;
+                            font-size: 11px;
+                            color: #FFF;
                         }
                         &.bdate {
-                            color: #b1b1b1;
+                            font-size: 11px;
                         }
                         &.title {
-                            font-size: 26px;
-                            margin: 10px 0 0 0;
+                            font-size: 13px;
+                            margin: 0px;
+                        }
+                        &.media {
+                            font-size: 11px;
+                            margin: 0px;
                         }
                     }
                     &:nth-child(2n) {
