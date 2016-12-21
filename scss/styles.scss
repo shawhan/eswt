@@ -112,6 +112,7 @@ textarea {
     .navbar-brand {
         height: 100%;
         display: block;
+        padding: 23px;
         &:hover {
             color: #FFF;
         }
@@ -611,6 +612,9 @@ span.link-down{
         }
     }
     .navbar {
+        .navbar-brand {
+            padding: 20px;
+        }
         .navbar-nav {
             width: 100%;
             li {
@@ -621,6 +625,7 @@ span.link-down{
             }
         }
     }
+
     .marquee a {
         font-size: 12px;
     }
