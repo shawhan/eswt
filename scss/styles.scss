@@ -198,14 +198,12 @@ textarea {
             top: 11.3%;
         }
         &.second {
-            top: 39.5%;
+            top: 38.9%;
         }
     }
     img {
         width: 100%;
-        height: auto;
         max-width: 100%;
-        max-height: 100%;
     }
 }
 #contact img {
@@ -394,7 +392,7 @@ span.link-down{
             }
         }
         .contact-info {
-            width: 80%;
+            width: 250px;
             margin: 0 auto;
             text-align: left;
         }
@@ -444,6 +442,15 @@ span.link-down{
         }
         .post-list {
             padding-top: 30px;
+            &.indication-list .post {
+                span.title {
+                    font-size: 16px;
+                    color: #1a1a1a;
+                }
+                span.summary {
+                    font-size: 14px;
+                }
+            }
         	.post {
         		display: none;
                 width: 23%;
@@ -451,7 +458,7 @@ span.link-down{
                 margin-top: 2%;
                 vertical-align: top;
                 text-align: left;
-
+                float: left;
                 .item {
                     position: relative;
                     overflow: hidden;
@@ -488,7 +495,7 @@ span.link-down{
                         display: inline-block;
                         width: 40%;
                         text-align: right;
-                        padding: 0 10px 0 0;
+                        padding: 0 5px 0 0;
                         vertical-align: middle;
                     }
                     &.bdate {
@@ -497,15 +504,15 @@ span.link-down{
                         display: inline-block;
                         width: 40%;
                         text-align: right;
-                        padding: 0 10px 0 0;
+                        padding: 0 5px 0 0;
                         vertical-align: middle;
                     }
                     &.title {
                         font-size: 20px;
                         font-weight: bold;
-                        color: #1a1a1a;
+                        color: #805647;
                         margin: 0px;
-                        padding: 0 10px;
+                        padding: 0 5px;
                     }
                     &.media {
                         font-size: 14px;
@@ -513,7 +520,7 @@ span.link-down{
                         color: #1a1a1a;
                         width: 60%;
                         display: inline-block;
-                        padding: 0 0 0 10px;
+                        padding: 0 0 0 5px;
                         margin: 0px;
                         vertical-align: middle;
                     }
