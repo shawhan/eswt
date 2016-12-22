@@ -163,19 +163,19 @@ jQuery(function($){
     var indication_html = "";
     data.indication.sort(SortByCreate);
     $.each(data.indication, function(k, v){
-      if (typeof(v.media) === "undefined") {
-        v.media = "";
-      }
-      if (typeof(v.date) === "undefined") {
-        v.date = "";
-      }
+      // if (typeof(v.media) === "undefined") {
+      //   v.media = "";
+      // }
+      // if (typeof(v.date) === "undefined") {
+      //   v.date = "";
+      // }
 
       indication_html += '<div class="post"><a class="colorbox" href="'+v.photo+'" title="'+v.title+'">';
       indication_html += '<div class="item"><div class="cover"></div><img src="'+v.photo+'"></div>';
-      if (v.media !== "" ||  v.date !== "") {
-        indication_html += '<span class="media">'+v.media+'</span>';
-        indication_html += '<span class="date">'+v.date+'</span>';
-      }
+      // if (v.media !== "" ||  v.date !== "") {
+      //   indication_html += '<span class="media">'+v.media+'</span>';
+      //   indication_html += '<span class="date">'+v.date+'</span>';
+      // }
       indication_html += '<span class="title">'+v.title+'</span>';
       if ("summary" in v && v.summary !== "") {
         if (v.summary.length > 39) {
