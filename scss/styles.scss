@@ -442,6 +442,13 @@ span.link-down{
         }
         .post-list {
             padding-top: 30px;
+            display: flex;
+            display: -mx-flexbox;
+            display: -webkit-flex;
+            flex-grow: 0;
+            -ms-flex-grow: 0;
+            -webkit-flex-grow: 0;
+            flex-wrap: wrap;
             &.indication-list .post {
                 span.title {
                     font-size: 16px;
@@ -458,7 +465,7 @@ span.link-down{
                 margin-top: 2%;
                 vertical-align: top;
                 text-align: left;
-                float: left;
+                flex: none;
                 .item {
                     position: relative;
                     overflow: hidden;
@@ -608,7 +615,8 @@ span.link-down{
     }
     .navbar-header {
        .navbar-toggle {
-            margin-right: 38px;
+            margin: 20px 20px 0 0;
+            padding: 0;
             border: none;
             &:hover {
                 background: transparent;
@@ -620,7 +628,7 @@ span.link-down{
     }
     .navbar {
         .navbar-brand {
-            padding: 20px;
+            padding: 15px;
         }
         .navbar-nav {
             width: 100%;
