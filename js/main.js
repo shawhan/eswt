@@ -176,7 +176,7 @@ jQuery(function($){
       indication_html += '<span class="title">'+v.title+'</span>';
       if ("summary" in v && v.summary !== "") {
         if (v.summary.length > 39) {
-          v.summary = v.summary.slice(1, 39) + '⋯⋯';
+          v.summary = v.summary.slice(0, 39) + '⋯⋯';
         }
         indication_html += '<span class="summary">'+v.summary+'</span>';
       }
@@ -233,7 +233,7 @@ jQuery(function($){
       media_html += '<span class="title">'+v.title+'</span>';
       if ("summary" in v && v.summary !== "") {
         if (v.summary.length > 39) {
-          v.summary = v.summary.slice(1, 39) + '⋯⋯';
+          v.summary = v.summary.slice(0, 39) + '⋯⋯';
         }
         media_html += '<span class="summary">'+v.summary+'</span>';
       }
@@ -285,7 +285,7 @@ jQuery(function($){
       case_html += '<span class="title">'+v.title+'</span>';
       if ("summary" in v && v.summary !== "") {
         if (v.summary.length > 39) {
-          v.summary = v.summary.slice(1, 39) + '⋯⋯';
+          v.summary = v.summary.slice(0, 39) + '⋯⋯';
         }
         case_html += '<span class="summary">'+v.summary+'</span>';
       }
@@ -331,7 +331,7 @@ jQuery(function($){
       info_html += '<span class="title">'+v.title+'</span>';
       if ("summary" in v && v.summary !== "") {
         if (v.summary.length > 39) {
-          v.summary = v.summary.slice(1, 39) + '⋯⋯';
+          v.summary = v.summary.slice(0, 39) + '⋯⋯';
         }
         info_html += '<span class="summary">'+v.summary+'</span>';
       }
@@ -377,7 +377,7 @@ jQuery(function($){
       activity_html += '<span class="title">'+v.title+'</span>';
       if ("summary" in v && v.summary !== "") {
         if (v.summary.length > 39) {
-          v.summary = v.summary.slice(1, 39) + '⋯⋯';
+          v.summary = v.summary.slice(0, 39) + '⋯⋯';
         }
         activity_html += '<span class="summary">'+v.summary+'</span>';
       }
