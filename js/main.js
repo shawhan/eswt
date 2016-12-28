@@ -160,19 +160,13 @@ jQuery(function($){
     var indication_html = "";
     data.indication.sort(SortByCreate);
     $.each(data.indication, function(k, v){
-      // if (typeof(v.media) === "undefined") {
-      //   v.media = "";
-      // }
-      // if (typeof(v.date) === "undefined") {
-      //   v.date = "";
-      // }
-
-      indication_html += '<div class="post"><a class="colorbox" href="'+v.photo+'" title="'+v.title+'">';
+      indication_html += '<div class="post">';
+      if (v.url !== "") {
+        indication_html += '<a href="'+v.url+'" target="_blank">';
+      } else {
+        indication_html += '<a class="colorbox" href="'+v.photo+'" title="'+v.title+'">';
+      }
       indication_html += '<div class="item"><div class="cover"></div><img src="'+v.photo+'"></div>';
-      // if (v.media !== "" ||  v.date !== "") {
-      //   indication_html += '<span class="media">'+v.media+'</span>';
-      //   indication_html += '<span class="date">'+v.date+'</span>';
-      // }
       indication_html += '<span class="title">'+v.title+'</span>';
       if ("summary" in v && v.summary !== "") {
         if (v.summary.length > 39) {
@@ -322,7 +316,12 @@ jQuery(function($){
         v.date = "";
       }
 
-      info_html += '<div class="post"><a class="colorbox" href="'+v.photo+'" title="'+v.title+'">';
+      info_html += '<div class="post">';
+      if (v.url !== "") {
+        info_html += '<a target="_blank" href="'+v.url+'">';
+      } else {
+        info_html += '<a class="colorbox" href="'+v.photo+'" title="'+v.title+'">';
+      }
       info_html += '<div class="item"><div class="cover"></div><img src="'+v.photo+'"></div>';
       if (v.media !== "" ||  v.date !== "") {
         info_html += '<span class="media">'+v.media+'</span>';
@@ -368,7 +367,14 @@ jQuery(function($){
         v.date = "";
       }
 
-      activity_html += '<div class="post"><a class="colorbox" href="'+v.photo+'" title="'+v.title+'">';
+      activity_html += '<div class="post">';
+
+      if (v.url !== "") {
+        activity_html += '<a href="'+v.url+'" target="_blank">';
+      } else {
+        activity_html += '<a class="colorbox" href="'+v.photo+'" title="'+v.title+'">';
+      }
+
       activity_html += '<div class="item"><div class="cover"></div><img src="'+v.photo+'"></div>';
       if (v.media !== "" ||  v.date !== "") {
         activity_html += '<span class="media">'+v.media+'</span>';
