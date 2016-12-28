@@ -160,6 +160,10 @@ jQuery(function($){
     var indication_html = "";
     data.indication.sort(SortByCreate);
     $.each(data.indication, function(k, v){
+      if (typeof(v.url) === "undefined") {
+        v.url = "";
+      }
+
       indication_html += '<div class="post">';
       if (v.url !== "") {
         indication_html += '<a href="'+v.url+'" target="_blank">';
