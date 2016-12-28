@@ -98,18 +98,15 @@ jQuery(function($){
     });
   }).on("click", ".post a.colorbox", function(e){
     e.preventDefault();
-    $.colorbox({
-      'maxWidth': '80%',
-      'maxHeight': '80%',
-      'href' : $(this).attr('href'),
-      'title' : $(this).attr('title'),
-      'onComplete': function() {
-        $("body").css({"overflow-y":"hidden"});
-      },
-      'onClosed' : function() {
-        $("body").css({"overflow-y":"visible"});
-      }
-    });
+    if (window.matchMedia("screen and (max-width: 667px)").matches) {
+      window.open($(this).attr('href'),'_blank');
+    } else {
+      $.colorbox({
+        'maxWidth': '90%',
+        'href' : $(this).attr('href'),
+        'title' : $(this).attr('title'),
+      });
+    }
   }).on("click", ".post a.colorbox-youtube", function(e){
     e.preventDefault();
     $.colorbox({
