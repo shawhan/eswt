@@ -98,18 +98,15 @@ jQuery(function($){
     });
   }).on("click", ".post a.colorbox", function(e){
     e.preventDefault();
-    $.colorbox({
-      'maxWidth': '80%',
-      'maxHeight': '80%',
-      'href' : $(this).attr('href'),
-      'title' : $(this).attr('title'),
-      'onComplete': function() {
-        $("body").css({"overflow-y":"hidden"});
-      },
-      'onClosed' : function() {
-        $("body").css({"overflow-y":"visible"});
-      }
-    });
+    if (window.matchMedia("screen and (max-width: 667px)").matches) {
+      window.open($(this).attr('href'),'_blank');
+    } else {
+      $.colorbox({
+        'maxWidth': '90%',
+        'href' : $(this).attr('href'),
+        'title' : $(this).attr('title'),
+      });
+    }
   }).on("click", ".post a.colorbox-youtube", function(e){
     e.preventDefault();
     $.colorbox({
@@ -163,23 +160,17 @@ jQuery(function($){
     var indication_html = "";
     data.indication.sort(SortByCreate);
     $.each(data.indication, function(k, v){
-      // if (typeof(v.media) === "undefined") {
-      //   v.media = "";
-      // }
-      // if (typeof(v.date) === "undefined") {
-      //   v.date = "";
-      // }
-
-      indication_html += '<div class="post"><a class="colorbox" href="'+v.photo+'" title="'+v.title+'">';
+      indication_html += '<div class="post">';
+      if (v.url !== "") {
+        indication_html += '<a href="'+v.url+'" target="_blank">';
+      } else {
+        indication_html += '<a class="colorbox" href="'+v.photo+'" title="'+v.title+'">';
+      }
       indication_html += '<div class="item"><div class="cover"></div><img src="'+v.photo+'"></div>';
-      // if (v.media !== "" ||  v.date !== "") {
-      //   indication_html += '<span class="media">'+v.media+'</span>';
-      //   indication_html += '<span class="date">'+v.date+'</span>';
-      // }
       indication_html += '<span class="title">'+v.title+'</span>';
       if ("summary" in v && v.summary !== "") {
         if (v.summary.length > 39) {
-          v.summary = v.summary.slice(1, 39) + '⋯⋯';
+          v.summary = v.summary.slice(0, 39) + '⋯⋯';
         }
         indication_html += '<span class="summary">'+v.summary+'</span>';
       }
@@ -236,7 +227,7 @@ jQuery(function($){
       media_html += '<span class="title">'+v.title+'</span>';
       if ("summary" in v && v.summary !== "") {
         if (v.summary.length > 39) {
-          v.summary = v.summary.slice(1, 39) + '⋯⋯';
+          v.summary = v.summary.slice(0, 39) + '⋯⋯';
         }
         media_html += '<span class="summary">'+v.summary+'</span>';
       }
@@ -288,7 +279,7 @@ jQuery(function($){
       case_html += '<span class="title">'+v.title+'</span>';
       if ("summary" in v && v.summary !== "") {
         if (v.summary.length > 39) {
-          v.summary = v.summary.slice(1, 39) + '⋯⋯';
+          v.summary = v.summary.slice(0, 39) + '⋯⋯';
         }
         case_html += '<span class="summary">'+v.summary+'</span>';
       }
@@ -325,7 +316,12 @@ jQuery(function($){
         v.date = "";
       }
 
-      info_html += '<div class="post"><a class="colorbox" href="'+v.photo+'" title="'+v.title+'">';
+      info_html += '<div class="post">';
+      if (v.url !== "") {
+        info_html += '<a target="_blank" href="'+v.url+'">';
+      } else {
+        info_html += '<a class="colorbox" href="'+v.photo+'" title="'+v.title+'">';
+      }
       info_html += '<div class="item"><div class="cover"></div><img src="'+v.photo+'"></div>';
       if (v.media !== "" ||  v.date !== "") {
         info_html += '<span class="media">'+v.media+'</span>';
@@ -334,7 +330,7 @@ jQuery(function($){
       info_html += '<span class="title">'+v.title+'</span>';
       if ("summary" in v && v.summary !== "") {
         if (v.summary.length > 39) {
-          v.summary = v.summary.slice(1, 39) + '⋯⋯';
+          v.summary = v.summary.slice(0, 39) + '⋯⋯';
         }
         info_html += '<span class="summary">'+v.summary+'</span>';
       }
@@ -371,7 +367,14 @@ jQuery(function($){
         v.date = "";
       }
 
-      activity_html += '<div class="post"><a class="colorbox" href="'+v.photo+'" title="'+v.title+'">';
+      activity_html += '<div class="post">';
+
+      if (v.url !== "") {
+        activity_html += '<a href="'+v.url+'" target="_blank">';
+      } else {
+        activity_html += '<a class="colorbox" href="'+v.photo+'" title="'+v.title+'">';
+      }
+
       activity_html += '<div class="item"><div class="cover"></div><img src="'+v.photo+'"></div>';
       if (v.media !== "" ||  v.date !== "") {
         activity_html += '<span class="media">'+v.media+'</span>';
@@ -380,7 +383,7 @@ jQuery(function($){
       activity_html += '<span class="title">'+v.title+'</span>';
       if ("summary" in v && v.summary !== "") {
         if (v.summary.length > 39) {
-          v.summary = v.summary.slice(1, 39) + '⋯⋯';
+          v.summary = v.summary.slice(0, 39) + '⋯⋯';
         }
         activity_html += '<span class="summary">'+v.summary+'</span>';
       }
