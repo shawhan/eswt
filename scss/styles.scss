@@ -97,11 +97,13 @@ textarea {
             height: auto;
             max-height: 100% !important;
         }
-        .embed-responsive.embed-responsive-16by9 {
-            max-width: 100%;
-            height: auto;
-        }
     }
+}
+
+.embed-responsive-2by1 {
+    max-width: 100%;
+    height: auto;
+    padding-bottom: 50%;
 }
 
 .navbar {
@@ -593,12 +595,8 @@ span.link-down{
 		        clear: both;
 		    }
         }
-        .embed-responsive.embed-responsive-4by3 {
+        .embed-responsive.embed-responsive-2by1 {
             margin: 0 auto;
-            &.map {
-                max-width: 960px;
-                max-height: 510px;
-            }
         }
     }
 }
@@ -808,7 +806,7 @@ span.link-down{
                     }
                 }
             }
-            .embed-responsive.embed-responsive-16by9 {
+            .embed-responsive.embed-responsive-2by1 {
                 max-width: 90vw;
             }
         }
