@@ -332,51 +332,36 @@ span.link-down{
     h2 {
     	font-weight: bold;
     	font-size: 2.5em;
-    	margin: 0 auto;
+    	margin: 0 auto 20px auto;
         color: transparent;
+        min-height: 53px;
+        background-size: 18% auto;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        background-position: 50% 50%;
         &.indication {
-            background: transparent url(../img/pc/title-indication.png?v=1) scroll no-repeat 50% 50%;
-            width: 493px;
-            height: 53px;
-            background-size: auto 40px;
+            background-image: url(../img/pc/title-indication.png?v=3);
+            background-size: 35% auto;
         }
         &.case {
-            background: transparent url(../img/pc/title-case.png?v=1) scroll no-repeat 50% 50%;
-            width: 217px;
-            height: 53px;
-            background-size: auto 40px;
+            background-image: url(../img/pc/title-case.png?v=3);
         }
         &.info {
-            background: transparent url(../img/pc/title-info.png?v=1) scroll no-repeat 50% 50%;
-            width: 217px;
-            height: 53px;
-            background-size: auto 40px;
+            background-image: url(../img/pc/title-info.png?v=3);
         }
         &.location {
-            background: transparent url(../img/pc/title-location.png?v=1) scroll no-repeat 50% 50%;
-            background-size: contain;
-            width: 80%;
-            height: 45px;
+            background-image: url(../img/pc/title-location.png?v=3);
+            background-size: 60% auto;
             margin-bottom: 30px;
         }
         &.activity {
-            background: transparent url(../img/pc/title-activity.png?v=1) scroll no-repeat 50% 50%;
-            width: 215px;
-            height: 53px;
-            background-size: auto 40px;
+            background-image: url(../img/pc/title-activity.png?v=3);
         }
         &.media {
-            background: transparent url(../img/pc/title-media.png?v=1) scroll no-repeat 50% 50%;
-            width: 217px;
-            height: 53px;
-            background-size: auto 40px;
+            background-image: url(../img/pc/title-media.png?v=3);
         }
         &.contact {
-            margin-bottom: 30px;
-            background: transparent url(../img/pc/title-contact.png?v=1) scroll no-repeat 50% 50%;
-            width: 272px;
-            height: 52px;
-            background-size: auto 40px;
+            background-image: url(../img/pc/title-contact.png?v=3);
         }
     }
     .content {
@@ -427,7 +412,7 @@ span.link-down{
             }
         }
         a.line {
-            background: transparent url(../img/line.png?v=1) scroll no-repeat 0px 50%;
+            background: transparent url(../img/line.png?v=3) scroll no-repeat 0px 50%;
             background-size: 40px;
             text-indent: 55px;
             height: 40px;
@@ -703,49 +688,34 @@ span.link-down{
         padding: 25px 0;
         width: 100%;
         h2 {
-            font-size: 2.0em;
+            font-size: 1.8em;
             margin: 15px auto;
+            min-height: 20px;
+            background-size: contain;
             &.indication {
-                background: transparent url(../img/mobile/title-indication.png?v=3) scroll no-repeat 50% 50%;
-                width: 100%;
-                height: 20px;
+                background-image: url(../img/mobile/title-indication.png?v=3);
                 background-size: contain;
             }
             &.case {
-                background: transparent url(../img/mobile/title-case.png?v=3) scroll no-repeat 50% 50%;
-                width: 100%;
-                height: 20px;
-                background-size: contain;
+                background-image: url(../img/mobile/title-case.png?v=3);
             }
             &.info {
-                background: transparent url(../img/mobile/title-info.png?v=3) scroll no-repeat 50% 50%;
-                width: 100%;
-                height: 20px;
-                background-size: contain;
+                background-image: url(../img/mobile/title-info.png?v=3);
             }
             &.location {
-                background: transparent url(../img/mobile/title-location.png?v=3) scroll no-repeat 50% 50%;
-                width: 100%;
-                height: 40px;
+                background-image: url(../img/mobile/title-location.png?v=3);
                 background-size: contain;
+                margin-bottom: 15px;
+                min-height: 40px;
             }
             &.activity {
-                background: transparent url(../img/mobile/title-activity.png?v=3) scroll no-repeat 50% 50%;
-                width: 100%;
-                height: 20px;
-                background-size: contain;
+                background-image: url(../img/mobile/title-activity.png?v=3);
             }
             &.media {
-                background: transparent url(../img/mobile/title-media.png?v=3) scroll no-repeat 50% 50%;
-                width: 100%;
-                height: 20px;
-                background-size: contain;
+                background-image: url(../img/mobile/title-media.png?v=3);
             }
             &.contact {
-                background: transparent url(../img/mobile/title-contact.png?v=3) scroll no-repeat 50% 50%;
-                width: 100%;
-                height: 20px;
-                background-size: contain;
+                background-image: url(../img/mobile/title-contact.png?v=3);
             }
         }
         .content {
