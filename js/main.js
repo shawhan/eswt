@@ -269,13 +269,18 @@ jQuery(function($){
       }
 
       case_html += '<div class="post">';
-      if (v.url !== "") {
-        case_html += '<a href="'+v.url+'" target="_blank">';
-      } else {
-        case_html += '<a class="colorbox" href="'+v.photo+'" title="'+v.title+'">';
+      switch(v.type) {
+        case '':
+          case_html += '<a class="colorbox" href="'+v.photo+'" title="'+v.title+'">';
+        break;
+        case 'link':
+          case_html += '<a href="'+v.url+'" title="'+v.title+'" target="_blank">';
+        break;
+        case 'youtube':
+          case_html += '<a class="colorbox-youtube" data-id="'+v.url+'" title="'+v.title+'">';
+        break;
       }
-
-      case_html += '<div class="item"><div class="cover"></div><img src="'+v.photo+'"></div>';
+      case_html += '<div class="item"><div class="cover"></div><img src="'+v.cover+'"></div>';
       if (v.media !== "" ||  v.date !== "") {
         case_html += '<span class="media">'+v.media+'</span>';
         case_html += '<span class="date">'+v.date+'</span>';
@@ -287,7 +292,7 @@ jQuery(function($){
         }
         case_html += '<span class="summary">'+v.summary+'</span>';
       }
-      case_html += '</a></div>';
+      case_html += '</div>';
     });
     $('.case-list').append(case_html);
 
@@ -321,12 +326,18 @@ jQuery(function($){
       }
 
       info_html += '<div class="post">';
-      if (v.url !== "") {
-        info_html += '<a target="_blank" href="'+v.url+'">';
-      } else {
-        info_html += '<a class="colorbox" href="'+v.photo+'" title="'+v.title+'">';
+      switch(v.type) {
+        case '':
+          info_html += '<a class="colorbox" href="'+v.photo+'" title="'+v.title+'">';
+        break;
+        case 'link':
+          info_html += '<a href="'+v.url+'" title="'+v.title+'" target="_blank">';
+        break;
+        case 'youtube':
+          info_html += '<a class="colorbox-youtube" data-id="'+v.url+'" title="'+v.title+'">';
+        break;
       }
-      info_html += '<div class="item"><div class="cover"></div><img src="'+v.photo+'"></div>';
+      info_html += '<div class="item"><div class="cover"></div><img src="'+v.cover+'"></div>';
       if (v.media !== "" ||  v.date !== "") {
         info_html += '<span class="media">'+v.media+'</span>';
         info_html += '<span class="bdate">'+v.date+'</span>';
@@ -338,7 +349,7 @@ jQuery(function($){
         }
         info_html += '<span class="summary">'+v.summary+'</span>';
       }
-      info_html += '</a></div>';
+      info_html += '</div>';
     });
     $('.info-list').append(info_html);
 
@@ -372,14 +383,18 @@ jQuery(function($){
       }
 
       activity_html += '<div class="post">';
-
-      if (v.url !== "") {
-        activity_html += '<a href="'+v.url+'" target="_blank">';
-      } else {
-        activity_html += '<a class="colorbox" href="'+v.photo+'" title="'+v.title+'">';
+      switch(v.type) {
+        case '':
+          activity_html += '<a class="colorbox" href="'+v.photo+'" title="'+v.title+'">';
+        break;
+        case 'link':
+          activity_html += '<a href="'+v.url+'" title="'+v.title+'" target="_blank">';
+        break;
+        case 'youtube':
+          activity_html += '<a class="colorbox-youtube" data-id="'+v.url+'" title="'+v.title+'">';
+        break;
       }
-
-      activity_html += '<div class="item"><div class="cover"></div><img src="'+v.photo+'"></div>';
+      activity_html += '<div class="item"><div class="cover"></div><img src="'+v.cover+'"></div>';
       if (v.media !== "" ||  v.date !== "") {
         activity_html += '<span class="media">'+v.media+'</span>';
         activity_html += '<span class="date">'+v.date+'</span>';
@@ -391,7 +406,7 @@ jQuery(function($){
         }
         activity_html += '<span class="summary">'+v.summary+'</span>';
       }
-      activity_html += '</a></div>';
+      activity_html += '</div>';
     });
     $('.activity-list').append(activity_html);
 
@@ -413,6 +428,5 @@ jQuery(function($){
         }
       });
     }
-
   });
 });
