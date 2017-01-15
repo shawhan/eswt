@@ -208,7 +208,7 @@ textarea {
         max-width: 100%;
     }
 }
-#contact img {
+#contact .bg {
     width: 100%;
     height: auto;
 }
@@ -329,6 +329,17 @@ span.link-down{
     &.no-padding {
         padding: 0px;
     }
+    .title-image {
+        margin: 0 auto;
+        width: 20vw;
+        height: auto;
+        &.m {
+            width: 40vw;
+        }
+        &.l {
+            width: 70vw;
+        }
+    }
     h2 {
     	font-weight: bold;
     	font-size: 2.5em;
@@ -339,30 +350,6 @@ span.link-down{
         background-repeat: no-repeat;
         background-color: transparent;
         background-position: 50% 50%;
-        &.indication {
-            background-image: url(../img/pc/title-indication.png?v=3);
-            background-size: 35% auto;
-        }
-        &.case {
-            background-image: url(../img/pc/title-case.png?v=3);
-        }
-        &.info {
-            background-image: url(../img/pc/title-info.png?v=3);
-        }
-        &.location {
-            background-image: url(../img/pc/title-location.png?v=3);
-            background-size: 60% auto;
-            margin-bottom: 30px;
-        }
-        &.activity {
-            background-image: url(../img/pc/title-activity.png?v=3);
-        }
-        &.media {
-            background-image: url(../img/pc/title-media.png?v=3);
-        }
-        &.contact {
-            background-image: url(../img/pc/title-contact.png?v=3);
-        }
     }
     .content {
         width: 90%;
@@ -687,36 +674,20 @@ span.link-down{
     .block {
         padding: 25px 0;
         width: 100%;
+        .title-image {
+            width: 25vw;
+            &.m {
+                width: 50vw;
+            }
+            &.l {
+                width: 65vw;
+            }
+        }
         h2 {
             font-size: 1.8em;
             margin: 15px auto;
             min-height: 20px;
             background-size: contain;
-            &.indication {
-                background-image: url(../img/mobile/title-indication.png?v=3);
-                background-size: contain;
-            }
-            &.case {
-                background-image: url(../img/mobile/title-case.png?v=3);
-            }
-            &.info {
-                background-image: url(../img/mobile/title-info.png?v=3);
-            }
-            &.location {
-                background-image: url(../img/mobile/title-location.png?v=3);
-                background-size: contain;
-                margin-bottom: 15px;
-                min-height: 40px;
-            }
-            &.activity {
-                background-image: url(../img/mobile/title-activity.png?v=3);
-            }
-            &.media {
-                background-image: url(../img/mobile/title-media.png?v=3);
-            }
-            &.contact {
-                background-image: url(../img/mobile/title-contact.png?v=3);
-            }
         }
         .content {
             margin: 15px auto;
